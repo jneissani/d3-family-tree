@@ -1,0 +1,376 @@
+{
+    "name": "Chaim Eshagh",
+    "hebrewName": "Chaim Istkhak ben Avraham v'",
+    "birthplace": "Kashan, Iran",
+    "deathplace": "",
+    "birthday": "1923-12-01",
+    "deathday": "",
+    "hebrewBirthday": "",
+    "hebrewDeathday": "",
+    "image": "/images/2df38317baa300ce36eb6fd2563eb367.jpg",
+    "spouse": {
+      "name": "Pooran (Roshanzamir)",
+      "hebrewName": "Sarah bat Yecheskel Chaim v'Moolook",
+      "weddingDate": "",
+      "weddingHebrewDate": "",
+      "birthplace": "Arak, Iran",
+      "deathplace": "",
+      "birthday": "1924-09-24",
+      "deathday": "2023-10-24",
+      "hebrewBirthday": "",
+      "hebrewDeathday": "",
+      "image": ""
+    },
+    "children": [
+      {
+        "name": "Ebrahim",
+        "hebrewName": "Avraham Chaim",
+        "birthplace": "Tehran, Iran",
+        "deathplace": "",
+        "birthday": "1952-08-01",
+        "deathday": "",
+        "hebrewBirthday": "Av 2 ",
+        "hebrewDeathday": "",
+        "image": "",
+        "spouse": {
+          "name": "Roya (Massachi)",
+          "hebrewName": "Rina bat Shlomo v'Mahin",
+          "weddingDate": "1982-04-09",
+          "weddingHebrewDate": "",
+          "birthplace": "Tehran, Iran",
+          "deathplace": "",
+          "birthday": "1959-07-14",
+          "deathday": "",
+          "hebrewBirthday": "",
+          "hebrewDeathday": "",
+          "image": ""
+        },
+        "children": [
+          {
+            "name": "Jonathan Isaac",
+            "hebrewName": "Yonatan Itzkhak",
+            "birthplace": "Manhasset, NY, USA",
+            "deathplace": "",
+            "birthday": "1983-05-23",
+            "deathday": "",
+            "hebrewBirthday": "Sivan 9",
+            "hebrewDeathday": "",
+            "image": "",
+            "spouse": {
+              "name": "Annette (Gabay)",
+              "hebrewName": "Anat bat Emil v'Irene",
+              "weddingDate": "2015-03-08",
+              "weddingHebrewDate": "Adar 18",
+              "birthplace": "Cherry Hill, NJ, USA",
+              "deathplace": "",
+              "birthday": "",
+              "deathday": "",
+              "hebrewBirthday": "",
+              "hebrewDeathday": "",
+              "image": ""
+            },
+            "children": [
+              {
+                "name": "Noa Ora",
+                "hebrewName": "Noa Ora",
+                "birthplace": "Camden, NJ, USA",
+                "deathplace": "",
+                "birthday": "2018-09-25",
+                "deathday": "",
+                "hebrewBirthday": "",
+                "hebrewDeathday": "",
+                "image": ""
+              },
+              {
+                "name": "Maya Aviva",
+                "hebrewName": "Maya Aviva",
+                "birthplace": "Camden, NJ, USA",
+                "deathplace": "",
+                "birthday": "2020-07-26",
+                "deathday": "",
+                "hebrewBirthday": "",
+                "hebrewDeathday": "",
+                "image": ""
+              },
+              {
+                "name": "Jacob Solomon",
+                "hebrewName": "Yakov Shlomo",
+                "birthplace": "Cherry Hill, NJ, USA",
+                "deathplace": "",
+                "birthday": "2022-09-02",
+                "deathday": "",
+                "hebrewBirthday": "",
+                "hebrewDeathday": "",
+                "image": ""
+              }
+            ]
+          },
+          {
+            "name": "Jessica Nicole",
+            "hebrewName": "Shira",
+            "birthplace": "Manhasset, NY, USA",
+            "deathplace": "",
+            "birthday": "1985-04-03",
+            "deathday": "",
+            "hebrewBirthday": "",
+            "hebrewDeathday": "",
+            "image": "",
+            "spouse": {
+              "name": "Aryeh (Hauptman)",
+              "hebrewName": "Moshe Aryeh",
+              "weddingDate": "2008-07-03",
+              "weddingHebrewDate": "",
+              "birthplace": "",
+              "deathplace": "",
+              "birthday": "1984-12-02",
+              "deathday": "",
+              "hebrewBirthday": "",
+              "hebrewDeathday": "",
+              "image": ""
+            },
+            "children": [
+              {
+                "name": "Isaac Ethan",
+                "hebrewName": "",
+                "birthplace": "Manhasset, NY, USA",
+                "deathplace": "",
+                "birthday": "2012-02-17",
+                "deathday": "",
+                "hebrewBirthday": "",
+                "hebrewDeathday": "",
+                "image": ""
+              },
+              {
+                "name": "Zacary (Zac)",
+                "hebrewName": "",
+                "birthplace": "Manhasset, NY, USA",
+                "deathplace": "",
+                "birthday": "2017-01-16",
+                "deathday": "",
+                "hebrewBirthday": "",
+                "hebrewDeathday": "",
+                "image": ""
+              },
+              {
+                "name": "Elizabeth (Ellie)",
+                "hebrewName": "Elisheva",
+                "birthplace": "Manhasset, NY, USA",
+                "deathplace": "",
+                "birthday": "2018-11-15",
+                "deathday": "",
+                "hebrewBirthday": "",
+                "hebrewDeathday": "",
+                "image": ""
+              }
+            ]
+          },
+          {
+            "name": "Justin David",
+            "hebrewName": "Shlomo David",
+            "birthplace": "Manhasset, NY, USA",
+            "deathplace": "",
+            "birthday": "1992-06-10",
+            "deathday": "",
+            "hebrewBirthday": "Sivan 11",
+            "hebrewDeathday": "",
+            "image": "/images/1533562722208.jpg",
+            "spouse": {
+              "name": "Rebecca (Tehrani)",
+              "hebrewName": "",
+              "weddingDate": "2023-11-09",
+              "weddingHebrewDate": "",
+              "birthplace": "",
+              "deathplace": "",
+              "birthday": "",
+              "deathday": "",
+              "hebrewBirthday": "",
+              "hebrewDeathday": "",
+              "image": ""
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Mansour",
+        "hebrewName": "Yecheskel Chaim",
+        "birthplace": "Teharn, Iran",
+        "deathplace": "",
+        "birthday": "",
+        "deathday": "",
+        "hebrewBirthday": "",
+        "hebrewDeathday": "",
+        "image": "",
+        "spouse": {
+          "name": "Sepideh (Sassooni)",
+          "hebrewName": "",
+          "weddingDate": "",
+          "weddingHebrewDate": "",
+          "birthplace": "Teharn, Iran",
+          "deathplace": "",
+          "birthday": "",
+          "deathday": "",
+          "hebrewBirthday": "",
+          "hebrewDeathday": "",
+          "image": ""
+        },
+        "children": [
+          {
+            "name": "Sharareh",
+            "hebrewName": "",
+            "birthplace": "Manhasset, NY, USA",
+            "deathplace": "",
+            "birthday": "1988-03-21",
+            "deathday": "",
+            "hebrewBirthday": "",
+            "hebrewDeathday": "",
+            "image": "",
+            "spouse": {
+              "name": "Misha (Gurevich)",
+              "hebrewName": "",
+              "weddingDate": "",
+              "weddingHebrewDate": "",
+              "birthplace": "",
+              "deathplace": "",
+              "birthday": "",
+              "deathday": "",
+              "hebrewBirthday": "",
+              "hebrewDeathday": "",
+              "image": ""
+            },
+            "children": [
+              {
+                "name": "Elliot",
+                "hebrewName": "Chaim Yitzkhak",
+                "birthplace": "",
+                "deathplace": "",
+                "birthday": "2023-03-21",
+                "deathday": "",
+                "hebrewBirthday": "",
+                "hebrewDeathday": "",
+                "image": ""
+              },
+              {
+                "name": "Mia",
+                "hebrewName": "Sarah",
+                "birthplace": "",
+                "deathplace": "",
+                "birthday": "2024-05-22",
+                "deathday": "",
+                "hebrewBirthday": "",
+                "hebrewDeathday": "",
+                "image": ""
+              }
+            ]
+          },
+          {
+            "name": "Desire",
+            "hebrewName": "",
+            "birthplace": "Manhasset, NY, USA",
+            "deathplace": "",
+            "birthday": "1992-07-31",
+            "deathday": "",
+            "hebrewBirthday": "",
+            "hebrewDeathday": "",
+            "image": ""
+          },
+          {
+            "name": "David",
+            "hebrewName": "",
+            "birthplace": "Manhasset, NY, USA",
+            "deathplace": "",
+            "birthday": "1995-03-10",
+            "deathday": "",
+            "hebrewBirthday": "",
+            "hebrewDeathday": "",
+            "image": ""
+          }
+        ]
+      },
+      {
+        "name": "Lida",
+        "hebrewName": "",
+        "birthplace": "Teharn, Iran",
+        "deathplace": "",
+        "birthday": "",
+        "deathday": "",
+        "hebrewBirthday": "",
+        "hebrewDeathday": "",
+        "image": "",
+        "spouse": {
+          "name": "Joseph (Esrail)",
+          "hebrewName": "",
+          "weddingDate": "",
+          "weddingHebrewDate": "",
+          "birthplace": "Teharn, Iran",
+          "deathplace": "",
+          "birthday": "",
+          "deathday": "",
+          "hebrewBirthday": "",
+          "hebrewDeathday": "",
+          "image": ""
+        },
+        "children": [
+          {
+            "name": "Matthew",
+            "hebrewName": "Mattityahu Shlomo",
+            "birthplace": "Manhasset, NY, USA",
+            "deathplace": "",
+            "birthday": "2007-03-20",
+            "deathday": "",
+            "hebrewBirthday": "",
+            "hebrewDeathday": "",
+            "image": ""
+          }
+        ]
+      },
+      {
+        "name": "Stella",
+        "hebrewName": "",
+        "birthplace": "Teharn, Iran",
+        "deathplace": "",
+        "birthday": "",
+        "deathday": "",
+        "hebrewBirthday": "",
+        "hebrewDeathday": "",
+        "image": "",
+        "spouse": {
+          "name": "Rony (Aghravi)",
+          "hebrewName": "",
+          "weddingDate": "",
+          "weddingHebrewDate": "",
+          "birthplace": "Tel-Aviv, Israel",
+          "deathplace": "",
+          "birthday": "",
+          "deathday": "",
+          "hebrewBirthday": "",
+          "hebrewDeathday": "",
+          "image": ""
+        },
+        "children": [
+          {
+            "name": "Alexander Benjamin",
+            "hebrewName": "Binyamin",
+            "birthplace": "Manhasset, NY, USA",
+            "deathplace": "",
+            "birthday": "1994-08-12",
+            "deathday": "",
+            "hebrewBirthday": "",
+            "hebrewDeathday": "",
+            "image": ""
+          },
+          {
+            "name": "Ashley",
+            "hebrewName": "",
+            "birthplace": "Manhasset, NY, USA",
+            "deathplace": "",
+            "birthday": "1997-10-19",
+            "deathday": "",
+            "hebrewBirthday": "",
+            "hebrewDeathday": "",
+            "image": ""
+          }
+        ]
+      }
+    ]
+  }
