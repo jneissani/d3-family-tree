@@ -32,10 +32,8 @@ const FamilyTree = ({ data }) => {
     }, [selectedMember, handleClickOutside]);
 
     const getImagePath = (imageName) => {
-      const baseUrl =
-        process.env.NODE_ENV === 'production'
-          ? process.env.REACT_APP_IMAGE_BASE_URL_PROD
-          : process.env.REACT_APP_IMAGE_BASE_URL_DEV;
+      const baseUrl = process.env.NODE_ENV === 'production' ? "/d3-family-tree/images" : "/images";
+//      const baseUrl = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_IMAGE_BASE_URL_PROD : process.env.REACT_APP_IMAGE_BASE_URL_DEV;
       return `${baseUrl}/${imageName}`;
     };
   
@@ -44,12 +42,14 @@ const FamilyTree = ({ data }) => {
             <rect width="240" height="160" x="-120" y="-80" fill="#ffffff" stroke="#000000" />
             {nodeDatum.image && (
                 <image
-                    href={getImagePath(nodeDatum.image)}
+//                    href={getImagePath(nodeDatum.image)}
+                    href={nodeDatum.image}
                     x="-40"
                     y="-70"
                     width="80"
                     height="80"
                     onError={(e) => {
+                        console.log(process.env.NODE_ENV);
                         console.log(process.env.REACT_APP_IMAGE_BASE_URL_PROD);
                         console.log(process.env.REACT_APP_IMAGE_BASE_URL_DEV);
                         console.error(`Error loading image: ${getImagePath(nodeDatum.image)}`);
@@ -57,21 +57,21 @@ const FamilyTree = ({ data }) => {
                     }}
                 />
             )}
-            <text fill="black" strokeWidth="1" x="0" y="25" textAnchor="middle" class="pName">
+            <text fill="black" strokeWidth="1" x="0" y="25" textAnchor="middle" className="pName">
                 {nodeDatum.name}
             </text>
             {nodeDatum?.hebrewName && (
-                <text fill="black" strokeWidth="1" x="0" y="42" textAnchor="middle" class="hName">
+                <text fill="black" strokeWidth="1" x="0" y="42" textAnchor="middle" className="hName">
                     {nodeDatum.hebrewName}
                 </text>
             )}
             {nodeDatum?.birthday && (
-                <text fill="black" strokeWidth="1" x="0" y="55" textAnchor="middle" class="supData">
+                <text fill="black" strokeWidth="1" x="0" y="55" textAnchor="middle" className="supData">
                     Born: {nodeDatum.birthday}
                 </text>
             )}
             {nodeDatum?.hebrewBirthday && (
-                <text fill="black" strokeWidth="1" x="0" y="70" textAnchor="middle" class="supData">
+                <text fill="black" strokeWidth="1" x="0" y="70" textAnchor="middle" className="supData">
                     {nodeDatum.hebrewBirthday}
                 </text>
             )}
@@ -91,21 +91,21 @@ const FamilyTree = ({ data }) => {
                         }}
                         />
                     )}
-                    <text fill="black" strokeWidth="1" x="260" y="25" textAnchor="middle" class="pName">
+                    <text fill="black" strokeWidth="1" x="260" y="25" textAnchor="middle" className="pName">
                         {nodeDatum.spouse.name}
                     </text>
                     {nodeDatum.spouse?.hebrewName && (
-                        <text fill="black" strokeWidth="1" x="260" y="42" textAnchor="middle" class="hName">
+                        <text fill="black" strokeWidth="1" x="260" y="42" textAnchor="middle" className="hName">
                             {nodeDatum.spouse.hebrewName}
                         </text>
                     )}
                     {nodeDatum.spouse?.birthday && (
-                      <text fill="grey" strokeWidth="1" x="260" y="55" textAnchor="middle" class="supData">
+                      <text fill="grey" strokeWidth="1" x="260" y="55" textAnchor="middle" className="supData">
                         Born: {nodeDatum.spouse.birthday}
                       </text>
                     )}
                     {nodeDatum.spouse?.hebrewBirthday && (
-                      <text fill="black" strokeWidth="1" x="260" y="70" textAnchor="middle" class="supData">
+                      <text fill="black" strokeWidth="1" x="260" y="70" textAnchor="middle" className="supData">
                         Born: {nodeDatum.spouse.hebrewBirthday}
                       </text>
                     )}
@@ -141,7 +141,7 @@ const FamilyTree = ({ data }) => {
                 )}
                 {selectedMember.spouse && (
                 <>
-                    <h3 class="spouse">Spouse: {selectedMember.spouse.name}</h3>
+                    <h3 className="spouse">Spouse: {selectedMember.spouse.name}</h3>
                     {selectedMember.spouse.image && (
                     <img src={getImagePath(selectedMember.spouse.image)} alt={selectedMember.spouse.name} width="100" />
                     )}
