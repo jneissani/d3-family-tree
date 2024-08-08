@@ -67,12 +67,12 @@ const FamilyTree = ({ data }) => {
             )}
             {nodeDatum?.birthday && (
                 <text fill="black" strokeWidth="1" x="0" y="55" textAnchor="middle" className="supData">
-                    Born: {nodeDatum.birthday}
+                    {nodeDatum.birthday}{nodeDatum?.deathday && (<> - {nodeDatum.deathday}</>)}
                 </text>
             )}
             {nodeDatum?.hebrewBirthday && (
                 <text fill="black" strokeWidth="1" x="0" y="70" textAnchor="middle" className="supData">
-                    {nodeDatum.hebrewBirthday}
+                    {nodeDatum.hebrewBirthday}{nodeDatum?.hebrewDeathday && (<> - {nodeDatum.hebrewDeathday}</>)}
                 </text>
             )}
             {nodeDatum.spouse && (
@@ -101,12 +101,12 @@ const FamilyTree = ({ data }) => {
                     )}
                     {nodeDatum.spouse?.birthday && (
                       <text fill="grey" strokeWidth="1" x="260" y="55" textAnchor="middle" className="supData">
-                        Born: {nodeDatum.spouse.birthday}
+                        {nodeDatum.spouse.birthday}{nodeDatum.spouse?.deathday && (<> - {nodeDatum.spouse.deathday}</>)}
                       </text>
                     )}
                     {nodeDatum.spouse?.hebrewBirthday && (
                       <text fill="black" strokeWidth="1" x="260" y="70" textAnchor="middle" className="supData">
-                        Born: {nodeDatum.spouse.hebrewBirthday}
+                        {nodeDatum.spouse.hebrewBirthday}{nodeDatum.spouse?.hebrewDeathday && (<> - {nodeDatum.spouse.hebrewDeathday}</>)}
                       </text>
                     )}
                 </>
@@ -129,32 +129,22 @@ const FamilyTree = ({ data }) => {
             <div className="modal">
             <div className="modal-content" ref={modalRef}>
                 <h2>{selectedMember.name}</h2>
-                {selectedMember.image && (
-                <img src={getImagePath(selectedMember.image)} alt={selectedMember.name} width="100" />
-                )}
-                {selectedMember?.hebrewName && (
-                <p>{selectedMember.hebrewName}</p>
-                )}
-                <p>{selectedMember?.birthday || 'Unknown'}</p>
-                {selectedMember?.birthplace && (
-                <p>Born in {selectedMember.birthplace}</p>
-                )}
+                {selectedMember.image && (<img src={getImagePath(selectedMember.image)} alt={selectedMember.name} width="100" />)}
+                {selectedMember?.hebrewName && (<p>{selectedMember.hebrewName}</p>)}
+                {selectedMember?.birthday && (<p>{selectedMember.birthday}{selectedMember?.deathday && (<> - {selectedMember.deathday}</>)}</p>)}
+                {selectedMember?.hebrewBirthday && (<p>{selectedMember.hebrewBirthday}{selectedMember?.hebrewDeathday && (<> - {selectedMember.hebrewDeathday}</>)}</p>)}
+                {selectedMember?.birthplace && (<p>Born in {selectedMember.birthplace}</p>)}
                 {selectedMember.spouse && (
-                <>
-                    <h3 className="spouse">Spouse: {selectedMember.spouse.name}</h3>
-                    {selectedMember.spouse.image && (
-                    <img src={getImagePath(selectedMember.spouse.image)} alt={selectedMember.spouse.name} width="100" />
-                    )}
-                    {selectedMember.spouse?.hebrewName && (
-                    <p>{selectedMember.spouse.hebrewName}</p>
-                    )}
-                    <p>{selectedMember.spouse?.birthday || 'Unknown'}</p>
-                    {selectedMember.spouse?.birthplace && (
-                    <p>Born in {selectedMember.spouse.birthplace}</p>
-                    )}
-                </>
-            )}
-            <button onClick={closeModal}>Close</button>
+                    <>
+                        <h3 className="spouse">Spouse: {selectedMember.spouse.name}</h3>
+                        {selectedMember.spouse.image && (<img src={getImagePath(selectedMember.spouse.image)} alt={selectedMember.spouse.name} width="100" />)}
+                        {selectedMember.spouse?.hebrewName && (<p>{selectedMember.spouse.hebrewName}</p>)}
+                        {selectedMember.spouse?.birthday && (<p>{selectedMember.spouse.birthday}{selectedMember.spouse?.deathday && (<> - {selectedMember.spouse.deathday}</>)}</p>)}
+                        {selectedMember.spouse?.hebrewBirthday && (<p>{selectedMember.spouse.hebrewBirthday}{selectedMember.spouse?.hebrewDeathday && (<> - {selectedMember.spouse.hebrewDeathday}</>)}</p>)}
+                        {selectedMember.spouse?.birthplace && (<p>Born in {selectedMember.spouse.birthplace}</p>)}
+                    </>
+                )}
+                <button onClick={closeModal}>Close</button>
           </div>
         </div>
       )}
