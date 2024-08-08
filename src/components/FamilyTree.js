@@ -30,19 +30,29 @@ const FamilyTree = ({ data }) => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
     }, [selectedMember, handleClickOutside]);
+
+    const getImagePath = (imageName) => {
+      const baseUrl =
+        process.env.NODE_ENV === 'production'
+          ? process.env.REACT_APP_IMAGE_BASE_URL_PROD
+          : process.env.REACT_APP_IMAGE_BASE_URL_DEV;
+      return `${baseUrl}/${imageName}`;
+    };
   
     const renderRectSvgNode = ({ nodeDatum }) => (
         <g onClick={() => handleNodeClick(nodeDatum)}>
             <rect width="240" height="160" x="-120" y="-80" fill="#ffffff" stroke="#000000" />
             {nodeDatum.image && (
                 <image
-                    href={nodeDatum.image}
+                    href={getImagePath(nodeDatum.image)}
                     x="-40"
                     y="-70"
                     width="80"
                     height="80"
                     onError={(e) => {
-                        console.error(`Error loading image: ${nodeDatum.image}`);
+                        console.log(process.env.REACT_APP_IMAGE_BASE_URL_PROD);
+                        console.log(process.env.REACT_APP_IMAGE_BASE_URL_DEV);
+                        console.error(`Error loading image: ${getImagePath(nodeDatum.image)}`);
                         e.target.style.display = 'none';
                     }}
                 />
@@ -120,7 +130,7 @@ const FamilyTree = ({ data }) => {
             <div className="modal-content" ref={modalRef}>
                 <h2>{selectedMember.name}</h2>
                 {selectedMember.image && (
-                <img src={selectedMember.image} alt={selectedMember.name} width="100" />
+                <img src={getImagePath(selectedMember.image)} alt={selectedMember.name} width="100" />
                 )}
                 {selectedMember?.hebrewName && (
                 <p>{selectedMember.hebrewName}</p>
@@ -133,7 +143,7 @@ const FamilyTree = ({ data }) => {
                 <>
                     <h3 class="spouse">Spouse: {selectedMember.spouse.name}</h3>
                     {selectedMember.spouse.image && (
-                    <img src={selectedMember.spouse.image} alt={selectedMember.spouse.name} width="100" />
+                    <img src={getImagePath(selectedMember.spouse.image)} alt={selectedMember.spouse.name} width="100" />
                     )}
                     {selectedMember.spouse?.hebrewName && (
                     <p>{selectedMember.spouse.hebrewName}</p>
