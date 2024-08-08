@@ -1,6 +1,6 @@
 import React from 'react';
 import familyData from './familyData.json';
-import FamilyTree from './FamilyTree';
+import FamilyTree from './components/FamilyTree';
 
 import './App.css';
 
