@@ -34,11 +34,34 @@ body {
 
 .modal-content {
   background-color: #fefefe;
-  margin: 15% auto;
+  margin: 10% auto; /* Center the modal */
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
-  max-width: 500px;
+  width: 80%; /* Wider modal */
+  max-width: 800px; /* Maximum width */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items vertically */
+}
+
+.modal-member {
+  display: flex; /* Use flexbox for member layout */
+  align-items: center; /* Center items vertically */
+  margin-bottom: 20px; /* Space between members */
+}
+
+.modal-member-content {
+  min-width: 250px;
+}
+
+.modal-member img {
+  margin-right: 50px; /* Space between image and text */
+  width: 100px; /* Set a fixed width for the image */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.modal-spouse {
+  margin-top: 10px; /* Space between member and spouse */
 }
 
 button {

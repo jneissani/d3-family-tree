@@ -70,6 +70,10 @@ const FamilyTree = ({ data }) => {
                     {nodeDatum.birthday}{nodeDatum?.deathday && (<> - {nodeDatum.deathday}</>)}
                 </text>
             )}
+            {
+                // Gregorian to Hebrew date converter: https://www.hebcal.com/converter?gd=19&gm=10&gy=1997&g2h=1
+                // Gregorian to Persian date converter: https://calcuworld.com/calendar-calculators/persian-calendar-converter/
+            }
             {nodeDatum?.hebrewBirthday && (
                 <text fill="black" strokeWidth="1" x="0" y="70" textAnchor="middle" className="supData">
                     {nodeDatum.hebrewBirthday}{nodeDatum?.hebrewDeathday && (<> - {nodeDatum.hebrewDeathday}</>)}
@@ -81,7 +85,7 @@ const FamilyTree = ({ data }) => {
                     {nodeDatum.spouse.image && (
                         <image
                         href={nodeDatum.spouse.image}
-                        x="180"
+                        x="225"
                         y="-70"
                         width="80"
                         height="80"
@@ -116,40 +120,51 @@ const FamilyTree = ({ data }) => {
 
     return (
         <div style={{ width: '100%', height: '100vh' }}>
-        <Tree
-            data={data}
-            orientation="vertical"
-            pathFunc="step"
-            translate={{ x: 300, y: 50 }}
-            nodeSize={{ x: 300, y: 200 }}
-            separation={{ siblings: 2, nonSiblings: 2 }}
-            renderCustomNodeElement={renderRectSvgNode}
-        />
-        {selectedMember && (
-            <div className="modal">
-            <div className="modal-content" ref={modalRef}>
-                <h2>{selectedMember.name}</h2>
-                {selectedMember.image && (<img src={getImagePath(selectedMember.image)} alt={selectedMember.name} width="100" />)}
-                {selectedMember?.hebrewName && (<p>{selectedMember.hebrewName}</p>)}
-                {selectedMember?.birthday && (<p>{selectedMember.birthday}{selectedMember?.deathday && (<> - {selectedMember.deathday}</>)}</p>)}
-                {selectedMember?.hebrewBirthday && (<p>{selectedMember.hebrewBirthday}{selectedMember?.hebrewDeathday && (<> - {selectedMember.hebrewDeathday}</>)}</p>)}
-                {selectedMember?.birthplace && (<p>Born in {selectedMember.birthplace}</p>)}
-                {selectedMember.spouse && (
-                    <>
-                        <h3 className="spouse">Spouse: {selectedMember.spouse.name}</h3>
-                        {selectedMember.spouse.image && (<img src={getImagePath(selectedMember.spouse.image)} alt={selectedMember.spouse.name} width="100" />)}
-                        {selectedMember.spouse?.hebrewName && (<p>{selectedMember.spouse.hebrewName}</p>)}
-                        {selectedMember.spouse?.birthday && (<p>{selectedMember.spouse.birthday}{selectedMember.spouse?.deathday && (<> - {selectedMember.spouse.deathday}</>)}</p>)}
-                        {selectedMember.spouse?.hebrewBirthday && (<p>{selectedMember.spouse.hebrewBirthday}{selectedMember.spouse?.hebrewDeathday && (<> - {selectedMember.spouse.hebrewDeathday}</>)}</p>)}
-                        {selectedMember.spouse?.birthplace && (<p>Born in {selectedMember.spouse.birthplace}</p>)}
-                    </>
-                )}
-                <button onClick={closeModal}>Close</button>
-          </div>
+            <Tree
+                data={data}
+                orientation="vertical"
+                pathFunc="step"
+                translate={{ x: 300, y: 50 }}
+                nodeSize={{ x: 300, y: 200 }}
+                separation={{ siblings: 2, nonSiblings: 2 }}
+                renderCustomNodeElement={renderRectSvgNode}
+            />
+            {selectedMember && (
+                <div className="modal">
+                    <div className="modal-content" ref={modalRef}>
+                        <div className="modal-member">
+                            {selectedMember.image && (<img src={selectedMember.image} alt={selectedMember.name}/>)}
+                            <div className='modal-member-content'>
+                                <h2>{selectedMember.name}</h2>
+                                {selectedMember?.hebrewName && (<p>{selectedMember.hebrewName}</p>)}
+                                {selectedMember?.birthday && (<p>{selectedMember.birthday}{selectedMember?.deathday && (<> - {selectedMember.deathday}</>)}</p>)}
+                                {selectedMember?.hebrewBirthday && (<p>{selectedMember.hebrewBirthday}{selectedMember?.hebrewDeathday && (<> - {selectedMember.hebrewDeathday}</>)}</p>)}
+                                {selectedMember?.persianBirthday && (<p>{selectedMember.persianBirthday}{selectedMember?.persianDeathday && (<> - {selectedMember.persianDeathday}</>)}</p>)}
+                                {selectedMember?.birthplace && (<p>Born in {selectedMember.birthplace}</p>)}
+                            </div>
+                        </div>
+                        {selectedMember.spouse && (
+                            <div className="modal-spouse">
+                                <div className="modal-member">
+                                    {selectedMember.spouse && (<>{selectedMember.spouse?.image && (<img src={selectedMember.spouse.image} alt={selectedMember.spouse.name} />)}</>)}
+                                    <div className='modal-member-content'>
+                                        <h3 className="spouse">{selectedMember.spouse.name}</h3>
+                                        {selectedMember.spouse?.hebrewName && (<p>{selectedMember.spouse.hebrewName}</p>)}
+                                        {selectedMember.spouse?.weddingDate && (<p>Married: {selectedMember.spouse.weddingDate} ({selectedMember.spouse.weddingHebrewDate})</p>)}
+                                        {selectedMember.spouse?.birthday && (<p>{selectedMember.spouse.birthday}{selectedMember.spouse?.deathday && (<> - {selectedMember.spouse.deathday}</>)}</p>)}
+                                        {selectedMember.spouse?.hebrewBirthday && (<p>{selectedMember.spouse.hebrewBirthday}{selectedMember.spouse?.hebrewDeathday && (<> - {selectedMember.spouse.hebrewDeathday}</>)}</p>)}
+                                        {selectedMember.spouse?.persianBirthday && (<p>{selectedMember.spouse.persianBirthday}{selectedMember.spouse?.persianDeathday && (<> - {selectedMember.spouse.persianDeathday}</>)}</p>)}
+                                        {selectedMember.spouse?.birthplace && (<p>Born in {selectedMember.spouse.birthplace}</p>)}
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+                        <button onClick={closeModal}>Close</button>
+                    </div>
+                </div>
+            )}
         </div>
-      )}
-    </div>
-  );
+    );
 };
 
 export default FamilyTree;

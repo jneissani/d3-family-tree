@@ -7,8 +7,8 @@
     "deathday": "",
     "hebrewBirthday": "5684 Kislev 23",
     "hebrewDeathday": "",
-    "iranBirthday": "",
-    "iranDeathday": "",
+    "persianBirthday": "",
+    "persianDeathday": "",
     "image": "/d3-family-tree/images/2df38317baa300ce36eb6fd2563eb367.jpg",
     "spouse": {
       "name": "Pooran Roshanzamir",
@@ -20,10 +20,10 @@
       "birthday": "1924-09-24",
       "deathday": "2023-10-24",
       "hebrewBirthday": "",
-      "hebrewDeathday": "",
-      "iranBirthday": "",
-      "iranDeathday": "",
-      "image": ""
+      "hebrewDeathday": "5784 Cheshvan 10",
+      "persianBirthday": "",
+      "persianDeathday": "",
+      "image": "/d3-family-tree/images/2df38317baa300ce36eb6fd2563eb367.jpg"
     },
     "children": [
       {
@@ -35,8 +35,8 @@
         "deathday": "",
         "hebrewBirthday": "5712 Av 2",
         "hebrewDeathday": "",
-        "iranBirthday": "",
-        "iranDeathday": "",
+        "persianBirthday": "",
+        "persianDeathday": "",
         "image": "",
         "spouse": {
           "name": "Roya Massachi",
@@ -49,8 +49,8 @@
           "deathday": "",
           "hebrewBirthday": "",
           "hebrewDeathday": "",
-          "iranBirthday": "",
-          "iranDeathday": "",
+          "persianBirthday": "",
+          "persianDeathday": "",
           "image": ""
         },
         "children": [
@@ -63,8 +63,8 @@
             "deathday": "",
             "hebrewBirthday": "5743 Sivan 11",
             "hebrewDeathday": "",
-            "iranBirthday": "",
-            "iranDeathday": "",
+            "persianBirthday": "",
+            "persianDeathday": "",
             "image": "",
             "spouse": {
               "name": "Annette Gabay",
@@ -77,8 +77,8 @@
               "deathday": "",
               "hebrewBirthday": "5744 Tamuz 5744",
               "hebrewDeathday": "",
-              "iranBirthday": "",
-              "iranDeathday": "",
+              "persianBirthday": "",
+              "persianDeathday": "",
               "image": ""
             },
             "children": [
@@ -91,8 +91,8 @@
                 "deathday": "",
                 "hebrewBirthday": "5779 Tishrei 16",
                 "hebrewDeathday": "",
-                "iranBirthday": "",
-                "iranDeathday": "",
+                "persianBirthday": "",
+                "persianDeathday": "",
                 "image": ""
               },
               {
@@ -104,8 +104,8 @@
                 "deathday": "",
                 "hebrewBirthday": "5780 Av 5",
                 "hebrewDeathday": "",
-                "iranBirthday": "",
-                "iranDeathday": "",
+                "persianBirthday": "",
+                "persianDeathday": "",
                 "image": ""
               },
               {
@@ -117,8 +117,8 @@
                 "deathday": "",
                 "hebrewBirthday": "5782 Elul 7",
                 "hebrewDeathday": "",
-                "iranBirthday": "",
-                "iranDeathday": "",
+                "persianBirthday": "",
+                "persianDeathday": "",
                 "image": ""
               }
             ]
@@ -132,8 +132,8 @@
             "deathday": "",
             "hebrewBirthday": "5745 Nisan 13",
             "hebrewDeathday": "",
-            "iranBirthday": "",
-            "iranDeathday": "",
+            "persianBirthday": "",
+            "persianDeathday": "",
             "image": "",
             "spouse": {
               "name": "Michael Aryeh Hauptman",
@@ -146,8 +146,8 @@
               "deathday": "",
               "hebrewBirthday": "5745 Kislev 9",
               "hebrewDeathday": "",
-              "iranBirthday": "",
-              "iranDeathday": "",
+              "persianBirthday": "",
+              "persianDeathday": "",
               "image": ""
             },
             "children": [
@@ -160,8 +160,8 @@
                 "deathday": "",
                 "hebrewBirthday": "5772 Sh'vat 25",
                 "hebrewDeathday": "",
-                "iranBirthday": "",
-                "iranDeathday": "",
+                "persianBirthday": "",
+                "persianDeathday": "",
                 "image": ""
               },
               {
@@ -173,8 +173,8 @@
                 "deathday": "",
                 "hebrewBirthday": "5777 Tevet 18",
                 "hebrewDeathday": "",
-                "iranBirthday": "",
-                "iranDeathday": "",
+                "persianBirthday": "",
+                "persianDeathday": "",
                 "image": ""
               },
               {
@@ -186,8 +186,8 @@
                 "deathday": "",
                 "hebrewBirthday": "5779 Kislev 7",
                 "hebrewDeathday": "",
-                "iranBirthday": "",
-                "iranDeathday": "",
+                "persianBirthday": "",
+                "persianDeathday": "",
                 "image": ""
               }
             ]
@@ -201,8 +201,8 @@
             "deathday": "",
             "hebrewBirthday": "5752 Sivan 9",
             "hebrewDeathday": "",
-            "iranBirthday": "",
-            "iranDeathday": "",
+            "persianBirthday": "",
+            "persianDeathday": "",
             "image": "/d3-family-tree/images/1533562722208.jpg",
             "spouse": {
               "name": "Rebecca Tehrani",
@@ -215,11 +215,25 @@
               "deathday": "",
               "hebrewBirthday": "",
               "hebrewDeathday": "",
-              "iranBirthday": "",
-              "iranDeathday": "",
-              "image": ""
+              "persianBirthday": "",
+              "persianDeathday": "",
+              "image": "/d3-family-tree/images/1533562722208.jpg"
             },
-            "children": []
+            "children": [
+              {
+                "name": "(TBD)",
+                "hebrewName": "",
+                "birthplace": "Manhasset, NY, USA",
+                "deathplace": "",
+                "birthday": "2024-08-09",
+                "deathday": "",
+                "hebrewBirthday": "5784 Av 5",
+                "hebrewDeathday": "",
+                "persianBirthday": "",
+                "persianDeathday": "",
+                "image": ""
+              }
+            ]
           }
         ]
       },
@@ -232,8 +246,8 @@
         "deathday": "",
         "hebrewBirthday": "",
         "hebrewDeathday": "",
-        "iranBirthday": "",
-        "iranDeathday": "",
+        "persianBirthday": "",
+        "persianDeathday": "",
         "image": "",
         "spouse": {
           "name": "Sepideh Sassooni",
@@ -246,8 +260,8 @@
           "deathday": "",
           "hebrewBirthday": "",
           "hebrewDeathday": "",
-          "iranBirthday": "",
-          "iranDeathday": "",
+          "persianBirthday": "",
+          "persianDeathday": "",
           "image": ""
         },
         "children": [
@@ -260,8 +274,8 @@
             "deathday": "",
             "hebrewBirthday": "5748 Nisan 3",
             "hebrewDeathday": "",
-            "iranBirthday": "",
-            "iranDeathday": "",
+            "persianBirthday": "",
+            "persianDeathday": "",
             "image": "",
             "spouse": {
               "name": "Misha Gurevich",
@@ -274,8 +288,8 @@
               "deathday": "",
               "hebrewBirthday": "",
               "hebrewDeathday": "",
-              "iranBirthday": "",
-              "iranDeathday": "",
+              "persianBirthday": "",
+              "persianDeathday": "",
               "image": ""
             },
             "children": [
@@ -288,8 +302,8 @@
                 "deathday": "",
                 "hebrewBirthday": "5783 Adar 28",
                 "hebrewDeathday": "",
-                "iranBirthday": "",
-                "iranDeathday": "",
+                "persianBirthday": "",
+                "persianDeathday": "",
                 "image": ""
               },
               {
@@ -301,8 +315,8 @@
                 "deathday": "",
                 "hebrewBirthday": "5784 Iyar 14",
                 "hebrewDeathday": "",
-                "iranBirthday": "",
-                "iranDeathday": "",
+                "persianBirthday": "",
+                "persianDeathday": "",
                 "image": ""
               }
             ]
@@ -316,8 +330,8 @@
             "deathday": "",
             "hebrewBirthday": "5752 Av 1",
             "hebrewDeathday": "",
-            "iranBirthday": "",
-            "iranDeathday": "",
+            "persianBirthday": "",
+            "persianDeathday": "",
             "image": ""
           },
           {
@@ -329,8 +343,8 @@
             "deathday": "",
             "hebrewBirthday": "5755 Adar II 8",
             "hebrewDeathday": "",
-            "iranBirthday": "",
-            "iranDeathday": "",
+            "persianBirthday": "",
+            "persianDeathday": "",
             "image": ""
           }
         ]
@@ -344,8 +358,8 @@
         "deathday": "",
         "hebrewBirthday": "",
         "hebrewDeathday": "",
-        "iranBirthday": "",
-        "iranDeathday": "",
+        "persianBirthday": "",
+        "persianDeathday": "",
         "image": "",
         "spouse": {
           "name": "Joseph Esrail",
@@ -358,8 +372,8 @@
           "deathday": "",
           "hebrewBirthday": "",
           "hebrewDeathday": "",
-          "iranBirthday": "",
-          "iranDeathday": "",
+          "persianBirthday": "",
+          "persianDeathday": "",
           "image": ""
         },
         "children": [
@@ -372,8 +386,8 @@
             "deathday": "",
             "hebrewBirthday": "5767 Nisan 1",
             "hebrewDeathday": "",
-            "iranBirthday": "",
-            "iranDeathday": "",
+            "persianBirthday": "",
+            "persianDeathday": "",
             "image": ""
           }
         ]
@@ -387,8 +401,8 @@
         "deathday": "",
         "hebrewBirthday": "",
         "hebrewDeathday": "",
-        "iranBirthday": "",
-        "iranDeathday": "",
+        "persianBirthday": "",
+        "persianDeathday": "",
         "image": "",
         "spouse": {
           "name": "Rony Aghravi",
@@ -401,8 +415,8 @@
           "deathday": "",
           "hebrewBirthday": "",
           "hebrewDeathday": "",
-          "iranBirthday": "",
-          "iranDeathday": "",
+          "persianBirthday": "",
+          "persianDeathday": "",
           "image": ""
         },
         "children": [
@@ -415,8 +429,8 @@
             "deathday": "",
             "hebrewBirthday": "5754 Elul 5",
             "hebrewDeathday": "",
-            "iranBirthday": "",
-            "iranDeathday": "",
+            "persianBirthday": "",
+            "persianDeathday": "",
             "image": ""
           },
           {
@@ -428,8 +442,8 @@
             "deathday": "",
             "hebrewBirthday": "5758 Tishrei 18",
             "hebrewDeathday": "",
-            "iranBirthday": "",
-            "iranDeathday": "",
+            "persianBirthday": "",
+            "persianDeathday": "",
             "image": ""
           }
         ]
