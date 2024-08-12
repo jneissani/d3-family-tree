@@ -73,7 +73,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ### Suggested Enhancements
 
 - Add a form to input new family members
-- Implement a click handler to show more details about each family member
 - Add options to customize the tree layout (horizontal/vertical, different colors, etc.)
 - Implement data persistence using local storage or a backend API
-- Add spouses
+- Support mobile devices
+- Create banner for special events today
+

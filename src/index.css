@@ -37,7 +37,7 @@ body {
   margin: 10% auto; /* Center the modal */
   padding: 20px;
   border: 1px solid #888;
-  width: 80%; /* Wider modal */
+  width: 90%; /* Use a percentage width for responsiveness */
   max-width: 800px; /* Maximum width */
   display: flex; /* Use flexbox for layout */
   flex-direction: column; /* Stack items vertically */
@@ -55,13 +55,31 @@ body {
 }
 
 .modal-member img {
-  margin-right: 50px; /* Space between image and text */
+  margin-right: 20px; /* Space between image and text */
   width: 100px; /* Set a fixed width for the image */
   height: auto; /* Maintain aspect ratio */
 }
 
 .modal-spouse {
   margin-top: 10px; /* Space between member and spouse */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .modal-member {
+    flex-direction: column; /* Stack image and text on top of each other */
+    align-items: flex-start; /* Align items to the start */
+  }
+
+  .modal-member img {
+    margin-right: 0; /* Remove margin for stacked layout */
+    margin-bottom: 10px; /* Add space below the image */
+    width: 80px; /* Adjust image size for smaller screens */
+  }
+
+  .modal-content {
+    padding: 10px; /* Reduce padding for smaller screens */
+  }
 }
 
 button {
