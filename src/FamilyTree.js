@@ -135,7 +135,7 @@ const FamilyTree = ({ data }) => {
                         <div className="modal-member">
                             {selectedMember.image && (<img src={selectedMember.image} alt={selectedMember.name}/>)}
                             <div className='modal-member-content'>
-                                <h2>{selectedMember.name}</h2>
+                                <h2 className='member'>{selectedMember.name}</h2>
                                 {selectedMember?.hebrewName && (<p>{selectedMember.hebrewName}</p>)}
                                 {selectedMember?.birthday && (<p>{selectedMember.birthday}{selectedMember?.deathday && (<> - {selectedMember.deathday}</>)}</p>)}
                                 {selectedMember?.hebrewBirthday && (<p>{selectedMember.hebrewBirthday}{selectedMember?.hebrewDeathday && (<> - {selectedMember.hebrewDeathday}</>)}</p>)}

@@ -47,7 +47,7 @@ body {
 .modal-member {
   display: flex; /* Use flexbox for member layout */
   align-items: center; /* Center items vertically */
-  margin-bottom: 20px; /* Space between members */
+  margin-bottom: 0px; /* Space between members */
 }
 
 .modal-member-content {
@@ -61,7 +61,18 @@ body {
 }
 
 .modal-spouse {
+  border-top: #000 solid 2px;
   margin-top: 10px; /* Space between member and spouse */
+}
+
+h2.member {
+  margin-bottom: 5px;
+  margin-top: 0px;
+}
+
+h3.spouse {
+  margin-bottom: 5px;
+  margin-top: 10px;
 }
 
 /* Responsive Styles */
@@ -93,11 +104,6 @@ button {
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
-}
-
-h3.spouse {
-  border-top: #000 solid 2px;
-  padding-top: 10px;
 }
 
 p {
