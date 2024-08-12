@@ -75,6 +75,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - Add a form to input new family members
 - Add options to customize the tree layout (horizontal/vertical, different colors, etc.)
 - Implement data persistence using local storage or a backend API
-- Support mobile devices
 - Create banner for special events today
+
 
