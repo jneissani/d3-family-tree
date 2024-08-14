@@ -39,7 +39,6 @@ const BirthdayBanner = ({ familyData }) => {
     const birthdayMembers = checkBirthdays(familyData);
   
     if (birthdayMembers.length === 0) {
-        console.log(`No birthdays found.`);
         return null;
     }; // No birthdays today
   
