@@ -30,33 +30,32 @@ const FamilyTree = ({ data }) => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
     }, [selectedMember, handleClickOutside]);
-
+/*
     const getImagePath = (imageName) => {
-      const baseUrl = process.env.NODE_ENV === 'production' ? "/d3-family-tree/images" : "/images";
-//      const baseUrl = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_IMAGE_BASE_URL_PROD : process.env.REACT_APP_IMAGE_BASE_URL_DEV;
-      return `${baseUrl}/${imageName}`;
+        if (!imageName) {
+            return `/d3-family-tree/images/headshot-white.png`
+        }
+        else {
+            const baseUrl = process.env.NODE_ENV === 'production' ? "/d3-family-tree/images" : "/images";
+//            const baseUrl = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_IMAGE_BASE_URL_PROD : process.env.REACT_APP_IMAGE_BASE_URL_DEV;
+            return `${baseUrl}/${imageName}`;
+        }
     };
-  
+*/  
     const renderRectSvgNode = ({ nodeDatum }) => (
         <g onClick={() => handleNodeClick(nodeDatum)}>
             <rect width="240" height="160" x="-120" y="-80" fill="#ffffff" stroke="#000000" />
-            {nodeDatum.image && (
-                <image
-//                    href={getImagePath(nodeDatum.image)}
-                    href={nodeDatum.image}
-                    x="-40"
-                    y="-70"
-                    width="80"
-                    height="80"
-                    onError={(e) => {
-                        console.log(process.env.NODE_ENV);
-                        console.log(process.env.REACT_APP_IMAGE_BASE_URL_PROD);
-                        console.log(process.env.REACT_APP_IMAGE_BASE_URL_DEV);
-                        console.error(`Error loading image: ${getImagePath(nodeDatum.image)}`);
-                        e.target.style.display = 'none';
-                    }}
-                />
-            )}
+            <image
+                href={nodeDatum.image ? nodeDatum.image : `/d3-family-tree/images/headshot-white.png`}
+                x="-40"
+                y="-70"
+                width="80"
+                height="80"
+                onError={(e) => {
+                    console.error(`Error loading image: ${nodeDatum.image}`);
+                    e.target.style.display = 'none';
+                }}
+            />
             <text fill="black" strokeWidth="1" x="0" y="25" textAnchor="middle" className="pName">
                 {nodeDatum.name}
             </text>
@@ -82,9 +81,8 @@ const FamilyTree = ({ data }) => {
             {nodeDatum.spouse && (
                 <>
                     <rect width="240" height="160" x="140" y="-80" fill="#ffffff" stroke="#000000" />
-                    {nodeDatum.spouse.image && (
-                        <image
-                        href={nodeDatum.spouse.image}
+                    <image
+                        href={nodeDatum.spouse.image ? nodeDatum.image : `/d3-family-tree/images/headshot-white.png`}
                         x="225"
                         y="-70"
                         width="80"
@@ -93,8 +91,7 @@ const FamilyTree = ({ data }) => {
                             console.error(`Error loading image: ${nodeDatum.spouse.image}`);
                             e.target.style.display = 'none';
                         }}
-                        />
-                    )}
+                    />
                     <text fill="black" strokeWidth="1" x="260" y="25" textAnchor="middle" className="pName">
                         {nodeDatum.spouse.name}
                     </text>
@@ -133,7 +130,7 @@ const FamilyTree = ({ data }) => {
                 <div className="modal">
                     <div className="modal-content" ref={modalRef}>
                         <div className="modal-member">
-                            {selectedMember.image && (<img src={selectedMember.image} alt={selectedMember.name}/>)}
+                            <img src={selectedMember.image ? selectedMember.image : `/d3-family-tree/images/headshot-white.png`} alt={selectedMember.name}/>
                             <div className='modal-member-content'>
                                 <h2 className='member'>{selectedMember.name}</h2>
                                 {selectedMember?.hebrewName && (<p>{selectedMember.hebrewName}</p>)}
@@ -146,7 +143,7 @@ const FamilyTree = ({ data }) => {
                         {selectedMember.spouse && (
                             <div className="modal-spouse">
                                 <div className="modal-member">
-                                    {selectedMember.spouse && (<>{selectedMember.spouse?.image && (<img src={selectedMember.spouse.image} alt={selectedMember.spouse.name} />)}</>)}
+                                    <img src={selectedMember.spouse.image ? selectedMember.spouse.image : `/d3-family-tree/images/headshot-white.png`} alt={selectedMember.spouse.name}/>
                                     <div className='modal-member-content'>
                                         <h3 className="spouse">{selectedMember.spouse.name}</h3>
                                         {selectedMember.spouse?.hebrewName && (<p>{selectedMember.spouse.hebrewName}</p>)}

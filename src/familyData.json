@@ -1,5 +1,5 @@
 {
-    "name": "Chaim Eshagh",
+    "name": "Chaim Eshagh Neysani",
     "hebrewName": "Chaim Istkhak ben Avraham v'",
     "birthplace": "Kashan, Iran",
     "deathplace": "",
@@ -23,15 +23,15 @@
       "hebrewDeathday": "10 Cheshvan 5784",
       "persianBirthday": "",
       "persianDeathday": "",
-      "image": "/d3-family-tree/images/2df38317baa300ce36eb6fd2563eb367.jpg"
+      "image": ""
     },
     "children": [
       {
-        "name": "Ebrahim",
+        "name": "Abraham Neissani",
         "hebrewName": "Avraham Chaim",
         "birthplace": "Tehran, Iran",
         "deathplace": "",
-        "birthday": "1952-08-01 (celebrated), 1952-07-24",
+        "birthday": "",
         "deathday": "",
         "hebrewBirthday": "2 Av 5712",
         "hebrewDeathday": "",
@@ -55,7 +55,7 @@
         },
         "children": [
           {
-            "name": "Jonathan Isaac",
+            "name": "Jonathan Isaac Neissani",
             "hebrewName": "Yonatan Itzkhak",
             "birthplace": "Manhasset, NY, USA",
             "deathplace": "",
@@ -83,7 +83,7 @@
             },
             "children": [
               {
-                "name": "Noa Ora",
+                "name": "Noa Ora Neissani",
                 "hebrewName": "Noa Ora",
                 "birthplace": "Camden, NJ, USA",
                 "deathplace": "",
@@ -96,7 +96,7 @@
                 "image": ""
               },
               {
-                "name": "Maya Aviva",
+                "name": "Maya Aviva Neissani",
                 "hebrewName": "Maya Aviva",
                 "birthplace": "Camden, NJ, USA",
                 "deathplace": "",
@@ -109,8 +109,8 @@
                 "image": ""
               },
               {
-                "name": "Jacob Solomon",
-                "hebrewName": "Yakov Shlomo",
+                "name": "Jacob Solomon Neissani",
+                "hebrewName": "Ya'akov Shlomo",
                 "birthplace": "Cherry Hill, NJ, USA",
                 "deathplace": "",
                 "birthday": "2022-09-02",
@@ -124,7 +124,7 @@
             ]
           },
           {
-            "name": "Jessica Nicole",
+            "name": "Jessica Nicole Neissani",
             "hebrewName": "Shira",
             "birthplace": "Manhasset, NY, USA",
             "deathplace": "",
@@ -152,8 +152,8 @@
             },
             "children": [
               {
-                "name": "Isaac Ethan",
-                "hebrewName": "Yitzkhak",
+                "name": "Isaac Ethan Hauptman",
+                "hebrewName": "Yisrael Yitzkhak",
                 "birthplace": "Manhasset, NY, USA",
                 "deathplace": "",
                 "birthday": "2012-02-17",
@@ -165,8 +165,8 @@
                 "image": ""
               },
               {
-                "name": "Zacary (Zac)",
-                "hebrewName": "Zakharia",
+                "name": "Zachary (Zac) Hauptman",
+                "hebrewName": "Shlomo Zakharia",
                 "birthplace": "Manhasset, NY, USA",
                 "deathplace": "",
                 "birthday": "2017-01-16",
@@ -178,8 +178,8 @@
                 "image": ""
               },
               {
-                "name": "Elizabeth (Ellie)",
-                "hebrewName": "Elisheva",
+                "name": "Elizabeth (Ellie) Hauptman",
+                "hebrewName": "Elisheva Chanah",
                 "birthplace": "Manhasset, NY, USA",
                 "deathplace": "",
                 "birthday": "2018-11-15",
@@ -193,7 +193,7 @@
             ]
           },
           {
-            "name": "Justin David",
+            "name": "Justin David Neissani",
             "hebrewName": "Shlomo David",
             "birthplace": "Manhasset, NY, USA",
             "deathplace": "",
@@ -217,11 +217,11 @@
               "hebrewDeathday": "",
               "persianBirthday": "",
               "persianDeathday": "",
-              "image": "/d3-family-tree/images/1533562722208.jpg"
+              "image": ""
             },
             "children": [
               {
-                "name": "(TBD)",
+                "name": "TBD Neissani",
                 "hebrewName": "",
                 "birthplace": "Manhasset, NY, USA",
                 "deathplace": "",
@@ -238,11 +238,11 @@
         ]
       },
       {
-        "name": "Mansour",
+        "name": "Mansour Neissani",
         "hebrewName": "Yecheskel Chaim",
         "birthplace": "Teharn, Iran",
         "deathplace": "",
-        "birthday": "1954-07-04 (celebrated)",
+        "birthday": "",
         "deathday": "",
         "hebrewBirthday": "",
         "hebrewDeathday": "",
@@ -256,7 +256,7 @@
           "weddingHebrewDate": "",
           "birthplace": "Teharn, Iran",
           "deathplace": "",
-          "birthday": "05-01",
+          "birthday": "",
           "deathday": "",
           "hebrewBirthday": "",
           "hebrewDeathday": "",
@@ -266,7 +266,7 @@
         },
         "children": [
           {
-            "name": "Sharareh",
+            "name": "Sharareh Neissani",
             "hebrewName": "",
             "birthplace": "Manhasset, NY, USA",
             "deathplace": "",
@@ -294,7 +294,7 @@
             },
             "children": [
               {
-                "name": "Elliot",
+                "name": "Elliot Gurevich",
                 "hebrewName": "Chaim Yitzkhak",
                 "birthplace": "Miami, FL, USA",
                 "deathplace": "",
@@ -307,7 +307,7 @@
                 "image": ""
               },
               {
-                "name": "Mia",
+                "name": "Mia Gurevich",
                 "hebrewName": "Sarah",
                 "birthplace": "Miami, FL, USA",
                 "deathplace": "",
@@ -322,7 +322,7 @@
             ]
           },
           {
-            "name": "Desire",
+            "name": "Desire Neissani",
             "hebrewName": "",
             "birthplace": "Manhasset, NY, USA",
             "deathplace": "",
@@ -335,7 +335,7 @@
             "image": ""
           },
           {
-            "name": "David",
+            "name": "David Neissani",
             "hebrewName": "",
             "birthplace": "Manhasset, NY, USA",
             "deathplace": "",
@@ -350,11 +350,11 @@
         ]
       },
       {
-        "name": "Lida",
+        "name": "Lida Neissani",
         "hebrewName": "",
         "birthplace": "Teharn, Iran",
         "deathplace": "",
-        "birthday": "02-02 (celebrated)",
+        "birthday": "",
         "deathday": "",
         "hebrewBirthday": "",
         "hebrewDeathday": "",
@@ -368,7 +368,7 @@
           "weddingHebrewDate": "",
           "birthplace": "Teharn, Iran",
           "deathplace": "",
-          "birthday": "09-15",
+          "birthday": "",
           "deathday": "",
           "hebrewBirthday": "",
           "hebrewDeathday": "",
@@ -378,7 +378,7 @@
         },
         "children": [
           {
-            "name": "Matthew",
+            "name": "Matthew Esrail",
             "hebrewName": "Mattityahu Shlomo",
             "birthplace": "Manhasset, NY, USA",
             "deathplace": "",
@@ -393,11 +393,11 @@
         ]
       },
       {
-        "name": "Stella",
+        "name": "Stella Neissani",
         "hebrewName": "",
         "birthplace": "Teharn, Iran",
         "deathplace": "",
-        "birthday": "02-22 (celebrated)",
+        "birthday": "",
         "deathday": "",
         "hebrewBirthday": "",
         "hebrewDeathday": "",
@@ -411,7 +411,7 @@
           "weddingHebrewDate": "",
           "birthplace": "Tel-Aviv, Israel",
           "deathplace": "",
-          "birthday": "05-02",
+          "birthday": "",
           "deathday": "",
           "hebrewBirthday": "",
           "hebrewDeathday": "",
@@ -421,7 +421,7 @@
         },
         "children": [
           {
-            "name": "Alexander Benjamin",
+            "name": "Alexander Benjamin Aghravi",
             "hebrewName": "Binyamin",
             "birthplace": "Manhasset, NY, USA",
             "deathplace": "",
@@ -434,7 +434,7 @@
             "image": ""
           },
           {
-            "name": "Ashley",
+            "name": "Ashley Aghravi",
             "hebrewName": "",
             "birthplace": "Manhasset, NY, USA",
             "deathplace": "",
