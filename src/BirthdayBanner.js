@@ -1,31 +1,34 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 
 const BirthdayBanner = ({ familyData }) => {
     // Get the user's local date
     const today = new Date();
     const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone; // Get user's time zone
     const todayString = today.toLocaleString('en-CA', { timeZone: userTimeZone, year: 'numeric', month: '2-digit', day: '2-digit' }).split(',')[0]; // Format date as YYYY-MM-DD
+
+    const isBirthdayToday = (birthday) => {
+        try {
+            const birthdayDate = new Date(birthday);
+            return birthdayDate.toISOString().split('T')[0] === todayString;
+        } catch (error) {
+            console.error(`Error parsing birthday date: ${error}`);
+            return false; // Return false if there's an error
+        }
+    };
   
     const checkBirthdays = (member) => {
         const birthdays = [];
 
         // Check the member's birthday
-        if (member.birthday) {
-            try {
-                const birthDate = new Date(member.birthday);
-                const birthDateString = birthDate.toISOString().split('T')[0];
-                if (birthDateString === todayString) {
-                    birthdays.push(member.name);
-                }
-            } catch (error) {
-                console.error(`Error parsing birth date for ${member.name}: ${error}`);
-            }
+        if (member.birthday && isBirthdayToday(member.birthday)) {
+            birthdays.push(member.name);
         }
         
         // Check spouse's birthday
-        if (member.spouse) {
-            birthdays.push(...checkBirthdays(member.spouse));
+        if (member.spouse && isBirthdayToday(member.spouse.birthday)) {
+            birthdays.push(member.spouse.name);
         }
+
         // Check children's birthdays
         if (member.children && Array.isArray(member.children)) {
             member.children.forEach(child => {
@@ -36,11 +39,9 @@ const BirthdayBanner = ({ familyData }) => {
         return birthdays;
     };
   
-    const birthdayMembers = checkBirthdays(familyData);
+    const birthdayMembers = useMemo(() => checkBirthdays(familyData), [familyData, todayString]);
   
-    if (birthdayMembers.length === 0) {
-        return null;
-    }; // No birthdays today
+    if (birthdayMembers.length === 0) return null; // No birthdays today 
   
     return (
         <div className="birthday-banner">
@@ -49,5 +50,4 @@ const BirthdayBanner = ({ familyData }) => {
     );
 };
 
-// export { BirthdayBanner };
 export default BirthdayBanner;

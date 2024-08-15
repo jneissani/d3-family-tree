@@ -75,12 +75,12 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - Implement data persistence using local storage or a backend API
 
 Improvements
-    Code Structure and Readability:
+XX    Code Structure and Readability:
         Refactor the hasBirthdays and hasAnniversaries functions to reduce nesting and improve readability. Consider using early returns to simplify the logic.
         Use more descriptive variable names to clarify their purpose.
-    Error Handling:
+XX    Error Handling:
         Implement better error handling in the date parsing sections to gracefully manage invalid date formats or missing data.
-    Performance Optimization:
+XX    Performance Optimization:
         Use memoization techniques with useMemo or useCallback for functions that are called frequently, such as checkAnniversary, to avoid unnecessary recalculations.
     Responsive Design:
         Ensure that the family tree layout is responsive and adapts well to different screen sizes. This can be achieved by using CSS media queries or a responsive design library.

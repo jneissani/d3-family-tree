@@ -1,3 +1,5 @@
+// Gregorian to Hebrew date converter: https://www.hebcal.com/converter?gd=19&gm=10&gy=1997&g2h=1
+// Gregorian to Persian date converter: https://calcuworld.com/calendar-calculators/persian-calendar-converter/
 import React, { useState, useCallback, useRef, useEffect } from 'react';
 import Tree from 'react-d3-tree';
 
@@ -20,16 +22,25 @@ const FamilyTree = ({ data }) => {
     }, [closeModal]);
     
     useEffect(() => {
+        const handleMouseDown = (event) => handleClickOutside(event);
         if (selectedMember) {
-            document.addEventListener('mousedown', handleClickOutside);
-        } else {
-            document.removeEventListener('mousedown', handleClickOutside);
+            document.addEventListener('mousedown', handleMouseDown);
         }
     
         return () => {
-            document.removeEventListener('mousedown', handleClickOutside);
+            document.removeEventListener('mousedown', handleMouseDown);
         };
     }, [selectedMember, handleClickOutside]);
+
+    const getImagePath = (imageName) => {
+        if (!imageName) {
+            return `/d3-family-tree/images/headshot-white.png`
+        }
+        else {
+            const baseUrl = process.env.NODE_ENV === 'production' ? "/d3-family-tree/images" : "/images";
+            return `${baseUrl}/${imageName}`;
+        }
+    };
 /*
     const getImagePath = (imageName) => {
         if (!imageName) {
@@ -41,7 +52,7 @@ const FamilyTree = ({ data }) => {
             return `${baseUrl}/${imageName}`;
         }
     };
-*/  
+*/
     const renderRectSvgNode = ({ nodeDatum }) => (
         <g onClick={() => handleNodeClick(nodeDatum)}>
             <rect width="240" height="160" x="-120" y="-80" fill="#ffffff" stroke="#000000" />
@@ -56,33 +67,21 @@ const FamilyTree = ({ data }) => {
                     e.target.style.display = 'none';
                 }}
             />
-            <text fill="black" strokeWidth="1" x="0" y="25" textAnchor="middle" className="pName">
-                {nodeDatum.name}
-            </text>
+            <text fill="black" strokeWidth="1" x="0" y="25" textAnchor="middle" className="pName">{nodeDatum.name}</text>
             {nodeDatum?.hebrewName && (
-                <text fill="black" strokeWidth="1" x="0" y="42" textAnchor="middle" className="hName">
-                    {nodeDatum.hebrewName}
-                </text>
+                <text fill="black" strokeWidth="1" x="0" y="42" textAnchor="middle" className="hName">{nodeDatum.hebrewName}</text>
             )}
-            {nodeDatum?.birthday && (
-                <text fill="black" strokeWidth="1" x="0" y="55" textAnchor="middle" className="supData">
-                    {nodeDatum.birthday}{nodeDatum?.deathday && (<> - {nodeDatum.deathday}</>)}
-                </text>
-            )}
-            {
-                // Gregorian to Hebrew date converter: https://www.hebcal.com/converter?gd=19&gm=10&gy=1997&g2h=1
-                // Gregorian to Persian date converter: https://calcuworld.com/calendar-calculators/persian-calendar-converter/
+            {nodeDatum.birthday && 
+                <text fill="black" strokeWidth="1" x="0" y="55" textAnchor="middle" className="details">{nodeDatum.birthday}{nodeDatum.deathday && ` - ${nodeDatum.deathday}`}</text>
             }
-            {nodeDatum?.hebrewBirthday && (
-                <text fill="black" strokeWidth="1" x="0" y="70" textAnchor="middle" className="supData">
-                    {nodeDatum.hebrewBirthday}{nodeDatum?.hebrewDeathday && (<> - {nodeDatum.hebrewDeathday}</>)}
-                </text>
-            )}
+            {nodeDatum.hebrewBirthday && 
+                <text fill="black" strokeWidth="1" x="0" y="70" textAnchor="middle" className="details">{nodeDatum.hebrewBirthday}{nodeDatum.hebrewDeathday && ` - ${nodeDatum.hebrewDeathday}`}</text>
+            }
             {nodeDatum.spouse && (
                 <>
                     <rect width="240" height="160" x="140" y="-80" fill="#ffffff" stroke="#000000" />
                     <image
-                        href={nodeDatum.spouse.image ? nodeDatum.image : `/d3-family-tree/images/headshot-white.png`}
+                        href={nodeDatum.spouse.image ? nodeDatum.spouse.image : `/d3-family-tree/images/headshot-white.png`}
                         x="225"
                         y="-70"
                         width="80"
@@ -92,24 +91,16 @@ const FamilyTree = ({ data }) => {
                             e.target.style.display = 'none';
                         }}
                     />
-                    <text fill="black" strokeWidth="1" x="260" y="25" textAnchor="middle" className="pName">
-                        {nodeDatum.spouse.name}
-                    </text>
-                    {nodeDatum.spouse?.hebrewName && (
-                        <text fill="black" strokeWidth="1" x="260" y="42" textAnchor="middle" className="hName">
-                            {nodeDatum.spouse.hebrewName}
-                        </text>
-                    )}
-                    {nodeDatum.spouse?.birthday && (
-                      <text fill="grey" strokeWidth="1" x="260" y="55" textAnchor="middle" className="supData">
-                        {nodeDatum.spouse.birthday}{nodeDatum.spouse?.deathday && (<> - {nodeDatum.spouse.deathday}</>)}
-                      </text>
-                    )}
-                    {nodeDatum.spouse?.hebrewBirthday && (
-                      <text fill="black" strokeWidth="1" x="260" y="70" textAnchor="middle" className="supData">
-                        {nodeDatum.spouse.hebrewBirthday}{nodeDatum.spouse?.hebrewDeathday && (<> - {nodeDatum.spouse.hebrewDeathday}</>)}
-                      </text>
-                    )}
+                    <text fill="black" strokeWidth="1" x="260" y="25" textAnchor="middle" className="pName">{nodeDatum.spouse.name}</text>
+                    {nodeDatum.spouse.hebrewName && 
+                        <text fill="black" strokeWidth="1" x="260" y="42" textAnchor="middle" className="hName">{nodeDatum.spouse.hebrewName}</text>
+                    }
+                    {nodeDatum.spouse.birthday && 
+                        <text fill="grey" strokeWidth="1" x="260" y="55" textAnchor="middle" className="supData">{nodeDatum.spouse.birthday}{nodeDatum.spouse.deathday && ` - ${nodeDatum.spouse.deathday}`}</text>
+                    }
+                    {nodeDatum.spouse.hebrewBirthday &&
+                      <text fill="black" strokeWidth="1" x="260" y="70" textAnchor="middle" className="supData">{nodeDatum.spouse.hebrewBirthday}{nodeDatum.spouse.hebrewDeathday && ` - ${nodeDatum.spouse.hebrewDeathday}`}</text>
+                    }
                 </>
             )}
         </g>

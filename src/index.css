@@ -5,20 +5,76 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+h2.member {
+  margin-bottom: 5px;
+  margin-top: 0px;
+}
+
+h3.anniversary-banner {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+h3.birthday-banner {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+h3.spouse {
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+p {
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
+
+.anniversary-banner {
+  background-color: #ffcccb; /* Light red background */
+  color: #000; /* Black text */
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  min-height: 50px;
+  left: 0;
+  right: 0;
+  z-index: 999; /* Ensure it appears above other content */
+}
+
 .App {
   text-align: center;
 }
 
-.rd3t-node {
-  cursor: pointer;
+.birthday-banner {
+  background-color: #ffeb3b; /* Yellow background */
+  color: #000; /* Black text */
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  min-height: 50px;
+  position: fixed; /* Fixed position at the top */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Ensure it appears above other content */
 }
 
-.rd3t-label__title {
-  fill: #000;
-}
-
-.rd3t-label__attributes {
-  fill: #777;
+.hName {
+  font-size: small;
 }
 
 .modal {
@@ -66,28 +122,33 @@ body {
   margin-top: 10px; /* Space between member and spouse */
 }
 
-h2.member {
-  margin-bottom: 5px;
-  margin-top: 0px;
+.pName {
+  font-size: large;
 }
 
-h3.spouse {
-  margin-bottom: 5px;
-  margin-top: 10px;
+.rd3t-node {
+  cursor: pointer;
 }
 
-h3.anniversary-banner {
-  margin-bottom: 5px;
-  margin-top: 5px;
+.rd3t-label__title {
+  fill: #000;
 }
 
-h3.birthday-banner {
-  margin-bottom: 5px;
-  margin-top: 5px;
+.rd3t-label__attributes {
+  fill: #777;
+}
+
+.supData,
+.details {
+  font-size: x-small;
 }
 
 /* Responsive Styles */
 @media (max-width: 600px) {
+  .modal-content {
+    padding: 10px; /* Reduce padding for smaller screens */
+  }
+
   .modal-member {
     flex-direction: column; /* Stack image and text on top of each other */
     align-items: flex-start; /* Align items to the start */
@@ -99,64 +160,4 @@ h3.birthday-banner {
     margin-bottom: 10px; /* Add space below the image */
     width: 80px; /* Adjust image size for smaller screens */
   }
-
-  .modal-content {
-    padding: 10px; /* Reduce padding for smaller screens */
-  }
-}
-
-.birthday-banner {
-  background-color: #ffeb3b; /* Yellow background */
-  color: #000; /* Black text */
-  text-align: center;
-  font-size: 1.5em;
-  font-weight: bold;
-  min-height: 50px;
-  position: fixed; /* Fixed position at the top */
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000; /* Ensure it appears above other content */
-}
-
-.anniversary-banner {
-  background-color: #ffcccb; /* Light red background */
-  color: #000; /* Black text */
-  text-align: center;
-  font-size: 1.5em;
-  font-weight: bold;
-  min-height: 50px;
-  left: 0;
-  right: 0;
-  z-index: 999; /* Ensure it appears above other content */
-}
-
-button {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-
-p {
-  margin-bottom: 8px;
-  margin-top: 8px;
-}
-
-.pName {
-  font-size: large;
-}
-
-.hName {
-  font-size: small;
-}
-
-.supData {
-  font-size: x-small;
 }
