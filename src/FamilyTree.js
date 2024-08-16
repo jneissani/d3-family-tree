@@ -36,75 +36,69 @@ const FamilyTree = ({ data }) => {
         if (!imageName) {
             return `/d3-family-tree/images/headshot-white.png`
         }
-        else {
-            const baseUrl = process.env.NODE_ENV === 'production' ? "/d3-family-tree/images" : "/images";
-            return `${baseUrl}/${imageName}`;
-        }
+        
+//        const baseUrl = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_IMAGE_BASE_URL_PROD : process.env.REACT_APP_IMAGE_BASE_URL_DEV;
+        const baseUrl = process.env.NODE_ENV === 'production' ? "/d3-family-tree/images" : "/images";
+        return `${baseUrl}/${imageName}`;
     };
-/*
-    const getImagePath = (imageName) => {
-        if (!imageName) {
-            return `/d3-family-tree/images/headshot-white.png`
-        }
-        else {
-            const baseUrl = process.env.NODE_ENV === 'production' ? "/d3-family-tree/images" : "/images";
-//            const baseUrl = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_IMAGE_BASE_URL_PROD : process.env.REACT_APP_IMAGE_BASE_URL_DEV;
-            return `${baseUrl}/${imageName}`;
-        }
+    const renderRectSvgNode = ({ nodeDatum }) => {
+        const { birthday, birthplace, deathday, gender, hebrewBirthday, hebrewDeathday, hebrewName, image, name, persianBirthday, persianDeathday, spouse, weddingDate } = nodeDatum;
+        const backgroundColor = gender === 'male' ? 'lightblue' : gender === 'female' ? 'lightpink' : 'white';
+        const spouseBackgroundColor = (spouse && spouse.gender === 'male') ? 'lightblue' : (spouse && spouse.gender === 'female') ? 'lightpink' : 'white';
+
+        return (
+            <g style={{ backgroundColor }} onClick={() => handleNodeClick(nodeDatum)}>
+                <rect width="240" height="160" x="-120" y="-80" fill={backgroundColor} stroke="#000000"/>
+                <image
+                    href={nodeDatum.image ? nodeDatum.image : `/d3-family-tree/images/headshot-white.png`}
+                    x="-40"
+                    y="-70"
+                    width="80"
+                    height="80"
+                    onError={(e) => {
+                        console.error(`Error loading image: ${nodeDatum.image}`);
+                        e.target.style.display = 'none';
+                    }}
+                />
+                <text fill="black" strokeWidth="1" x="0" y="25" textAnchor="middle" className="pName">{nodeDatum.name}</text>
+                {nodeDatum?.hebrewName && (
+                    <text fill="black" strokeWidth="1" x="0" y="42" textAnchor="middle" className="hName">{nodeDatum.hebrewName}</text>
+                )}
+                {nodeDatum.birthday && 
+                    <text fill="black" strokeWidth="1" x="0" y="55" textAnchor="middle" className="details">{nodeDatum.birthday}{nodeDatum.deathday && ` - ${nodeDatum.deathday}`}</text>
+                }
+                {nodeDatum.hebrewBirthday && 
+                    <text fill="black" strokeWidth="1" x="0" y="70" textAnchor="middle" className="details">{nodeDatum.hebrewBirthday}{nodeDatum.hebrewDeathday && ` - ${nodeDatum.hebrewDeathday}`}</text>
+                }
+                {nodeDatum.spouse && (
+                    <>
+                        <rect width="240" height="160" x="140" y="-80" fill={spouseBackgroundColor} stroke="#000000" />
+                        <image
+                            href={nodeDatum.spouse.image ? nodeDatum.spouse.image : `/d3-family-tree/images/headshot-white.png`}
+                            x="225"
+                            y="-70"
+                            width="80"
+                            height="80"
+                            onError={(e) => {
+                                console.error(`Error loading image: ${nodeDatum.spouse.image}`);
+                                e.target.style.display = 'none';
+                            }}
+                        />
+                        <text fill="black" strokeWidth="1" x="260" y="25" textAnchor="middle" className="pName">{nodeDatum.spouse.name}</text>
+                        {nodeDatum.spouse.hebrewName && 
+                            <text fill="black" strokeWidth="1" x="260" y="42" textAnchor="middle" className="hName">{nodeDatum.spouse.hebrewName}</text>
+                        }
+                        {nodeDatum.spouse.birthday && 
+                            <text fill="grey" strokeWidth="1" x="260" y="55" textAnchor="middle" className="supData">{nodeDatum.spouse.birthday}{nodeDatum.spouse.deathday && ` - ${nodeDatum.spouse.deathday}`}</text>
+                        }
+                        {nodeDatum.spouse.hebrewBirthday &&
+                        <text fill="black" strokeWidth="1" x="260" y="70" textAnchor="middle" className="supData">{nodeDatum.spouse.hebrewBirthday}{nodeDatum.spouse.hebrewDeathday && ` - ${nodeDatum.spouse.hebrewDeathday}`}</text>
+                        }
+                    </>
+                )}
+            </g>
+        )
     };
-*/
-    const renderRectSvgNode = ({ nodeDatum }) => (
-        <g onClick={() => handleNodeClick(nodeDatum)}>
-            <rect width="240" height="160" x="-120" y="-80" fill="#ffffff" stroke="#000000" />
-            <image
-                href={nodeDatum.image ? nodeDatum.image : `/d3-family-tree/images/headshot-white.png`}
-                x="-40"
-                y="-70"
-                width="80"
-                height="80"
-                onError={(e) => {
-                    console.error(`Error loading image: ${nodeDatum.image}`);
-                    e.target.style.display = 'none';
-                }}
-            />
-            <text fill="black" strokeWidth="1" x="0" y="25" textAnchor="middle" className="pName">{nodeDatum.name}</text>
-            {nodeDatum?.hebrewName && (
-                <text fill="black" strokeWidth="1" x="0" y="42" textAnchor="middle" className="hName">{nodeDatum.hebrewName}</text>
-            )}
-            {nodeDatum.birthday && 
-                <text fill="black" strokeWidth="1" x="0" y="55" textAnchor="middle" className="details">{nodeDatum.birthday}{nodeDatum.deathday && ` - ${nodeDatum.deathday}`}</text>
-            }
-            {nodeDatum.hebrewBirthday && 
-                <text fill="black" strokeWidth="1" x="0" y="70" textAnchor="middle" className="details">{nodeDatum.hebrewBirthday}{nodeDatum.hebrewDeathday && ` - ${nodeDatum.hebrewDeathday}`}</text>
-            }
-            {nodeDatum.spouse && (
-                <>
-                    <rect width="240" height="160" x="140" y="-80" fill="#ffffff" stroke="#000000" />
-                    <image
-                        href={nodeDatum.spouse.image ? nodeDatum.spouse.image : `/d3-family-tree/images/headshot-white.png`}
-                        x="225"
-                        y="-70"
-                        width="80"
-                        height="80"
-                        onError={(e) => {
-                            console.error(`Error loading image: ${nodeDatum.spouse.image}`);
-                            e.target.style.display = 'none';
-                        }}
-                    />
-                    <text fill="black" strokeWidth="1" x="260" y="25" textAnchor="middle" className="pName">{nodeDatum.spouse.name}</text>
-                    {nodeDatum.spouse.hebrewName && 
-                        <text fill="black" strokeWidth="1" x="260" y="42" textAnchor="middle" className="hName">{nodeDatum.spouse.hebrewName}</text>
-                    }
-                    {nodeDatum.spouse.birthday && 
-                        <text fill="grey" strokeWidth="1" x="260" y="55" textAnchor="middle" className="supData">{nodeDatum.spouse.birthday}{nodeDatum.spouse.deathday && ` - ${nodeDatum.spouse.deathday}`}</text>
-                    }
-                    {nodeDatum.spouse.hebrewBirthday &&
-                      <text fill="black" strokeWidth="1" x="260" y="70" textAnchor="middle" className="supData">{nodeDatum.spouse.hebrewBirthday}{nodeDatum.spouse.hebrewDeathday && ` - ${nodeDatum.spouse.hebrewDeathday}`}</text>
-                    }
-                </>
-            )}
-        </g>
-    );
 
     return (
         <div style={{ width: '100%', height: '100vh' }}>

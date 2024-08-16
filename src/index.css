@@ -77,6 +77,13 @@ p {
   font-size: small;
 }
 
+.male {
+  background-color: #add8e6;
+}
+.female {
+  background-color: #ffb6c1;
+}
+
 .modal {
   position: fixed;
   z-index: 1;
