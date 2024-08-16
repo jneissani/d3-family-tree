@@ -70,7 +70,7 @@
           "hebrewDeathday": "",
           "persianBirthday": "",
           "persianDeathday": "",
-          "image": "/d3-family-tree/images/2df38317baa300ce36eb6fd2563eb367.jpg",
+          "image": "",
           "spouse": {
             "name": "Poorandokht Roshanzamir",
             "hebrewName": "Sarah bat Yecheskel Chaim v'Moolook",
@@ -297,8 +297,8 @@
                   },
                   "children": [
                     {
-                      "name": "TBD Neissani",
-                      "hebrewName": "",
+                      "name": "Benjamin Omri Neissani",
+                      "hebrewName": "Binyamin Omri",
                       "gender": "male",
                       "birthplace": "Manhasset, NY, USA",
                       "deathplace": "",
@@ -525,8 +525,8 @@
                   "image": ""
                 },
                 {
-                  "name": "Ashley Aghravi",
-                  "hebrewName": "",
+                  "name": "Ashley Rachel Aghravi",
+                  "hebrewName": "Rakhel",
                   "gender": "female",
                   "birthplace": "Manhasset, NY, USA",
                   "deathplace": "",
