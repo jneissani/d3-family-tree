@@ -3,12 +3,13 @@ import React, { useMemo } from 'react';
 const AnniversaryBanner = ({ familyData }) => {
     const today = new Date();
     const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone; // Get user's time zone
-    const todayString = today.toLocaleString('en-CA', { timeZone: userTimeZone, year: 'numeric', month: '2-digit', day: '2-digit' }).split(',')[0]; // Format date as YYYY-MM-DD
+    const todayMonthDay = today.toLocaleString('en-CA', { timeZone: userTimeZone, month: '2-digit', day: '2-digit' }).replace(/\//g, '-'); // Format date as MM-DD
 
     const isAnniversaryToday = (weddingDate) => {
         try {
             const anniversaryDate = new Date(weddingDate);
-            return anniversaryDate.toISOString().split('T')[0] === todayString;
+            const anniversaryMonthDay = `${String(anniversaryDate.getMonth() + 1).padStart(2, '0')}-${anniversaryDate.getDate()+1}`;
+            return anniversaryMonthDay === todayMonthDay;
         } catch (error) {
             console.error(`Error parsing anniversary date: ${error}`);
             return false; // Return false if there's an error
@@ -33,7 +34,7 @@ const AnniversaryBanner = ({ familyData }) => {
         return anniversaries;
     };
   
-    const anniversaryMembers = useMemo(() => checkAnniversaries(familyData), [familyData, todayString]);
+    const anniversaryMembers = useMemo(() => checkAnniversaries(familyData), [familyData, todayMonthDay]);
   
     if (anniversaryMembers.length === 0) return null; // No anniversaries today
   

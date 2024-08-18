@@ -8,7 +8,7 @@ function App() {
   // Function to check for anniversaries
   const today = new Date();
   const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone; // Get user's time zone
-  const todayString = today.toLocaleString('en-CA', { timeZone: userTimeZone, year: 'numeric', month: '2-digit', day: '2-digit' }).split(',')[0]; // Format date as YYYY-MM-DD
+  const todayMonthDay = today.toLocaleString('en-CA', { timeZone: userTimeZone, month: '2-digit', day: '2-digit' }).replace(/\//g, '-'); // Format date as MM-DD
 
   const hasAnniversaries = (member) => {
     const isValidDate = (dateString) => {
@@ -20,8 +20,8 @@ function App() {
     if (member.spouse && member.spouse.weddingDate && isValidDate(member.spouse.weddingDate)) {
       try {
         const anniversaryDate = new Date(member.spouse.weddingDate);
-        const anniversaryDateString = anniversaryDate.toISOString().split('T')[0];
-        if (anniversaryDateString === todayString) {
+        const anniversaryMonthDay = `${String(anniversaryDate.getMonth() + 1).padStart(2, '0')}-${anniversaryDate.getDate()+1}`;
+        if ( anniversaryMonthDay === todayMonthDay) {
             return true; // Return true if the anniversary matches today
         }
       } catch (error) {
@@ -50,8 +50,8 @@ function App() {
     if (member.birthday && isValidDate(member.birthday)) {
       try {
         const birthdayDate = new Date(member.birthday);
-        const birthdayDateString = birthdayDate.toISOString().split('T')[0];
-        if (birthdayDateString === todayString) {
+        const birthdayMonthDay = `${String(birthdayDate.getMonth() + 1).padStart(2, '0')}-${birthdayDate.getDate()+1}`;
+        if (birthdayMonthDay === todayMonthDay) {
             return true; // Return true if a member's birthday matches today
         }
       } catch (error) {
@@ -76,8 +76,8 @@ function App() {
     return false; // Return false if no birthdays match
   };
 
-  const birthdaysFound = useMemo(() => hasBirthdays(familyData), [familyData, todayString]);
-  const anniversariesFound = useMemo(() => hasAnniversaries(familyData), [familyData, todayString]);
+  const birthdaysFound = useMemo(() => hasBirthdays(familyData), [familyData, todayMonthDay]);
+  const anniversariesFound = useMemo(() => hasAnniversaries(familyData), [familyData, todayMonthDay]);
 
   const anniversaryBanner  = <AnniversaryBanner familyData={familyData} />;
   const birthdayBanner = <BirthdayBanner familyData={familyData} />;

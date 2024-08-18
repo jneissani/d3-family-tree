@@ -4,12 +4,13 @@ const BirthdayBanner = ({ familyData }) => {
     // Get the user's local date
     const today = new Date();
     const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone; // Get user's time zone
-    const todayString = today.toLocaleString('en-CA', { timeZone: userTimeZone, year: 'numeric', month: '2-digit', day: '2-digit' }).split(',')[0]; // Format date as YYYY-MM-DD
+    const todayMonthDay = today.toLocaleString('en-CA', { timeZone: userTimeZone, month: '2-digit', day: '2-digit' }).replace(/\//g, '-'); // Format date as MM-DD
 
     const isBirthdayToday = (birthday) => {
         try {
             const birthdayDate = new Date(birthday);
-            return birthdayDate.toISOString().split('T')[0] === todayString;
+            const birthdayMonthDay = `${String(birthdayDate.getMonth() + 1).padStart(2, '0')}-${birthdayDate.getDate()+1}`;
+            return birthdayMonthDay === todayMonthDay;
         } catch (error) {
             console.error(`Error parsing birthday date: ${error}`);
             return false; // Return false if there's an error
@@ -39,7 +40,7 @@ const BirthdayBanner = ({ familyData }) => {
         return birthdays;
     };
   
-    const birthdayMembers = useMemo(() => checkBirthdays(familyData), [familyData, todayString]);
+    const birthdayMembers = useMemo(() => checkBirthdays(familyData), [familyData, todayMonthDay]);
   
     if (birthdayMembers.length === 0) return null; // No birthdays today 
   
