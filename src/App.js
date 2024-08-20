@@ -1,10 +1,29 @@
-import React, { useMemo } from 'react';
+import React, { useMemo  } from 'react';
+//import React, { useMemo, useEffect, useState  } from 'react';
 import familyData from './familyData.json';
 import FamilyTree from './FamilyTree';
 import BirthdayBanner from './BirthdayBanner';
 import AnniversaryBanner from './AnniversaryBanner';
 
 function App() {
+/*
+  // Connect to the DB
+  const [familyData, setFamilyData] = useState([]);
+
+  useEffect(() => {
+      const fetchData = async () => {
+          try {
+              const response = await fetch('http://localhost:5000/api/family');
+              const data = await response.json();
+              setFamilyData(data);
+          } catch (error) {
+              console.error('Error fetching family data:', error);
+          }
+      };
+
+      fetchData();
+  }, []);
+*/
   // Function to check for anniversaries
   const today = new Date();
   const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone; // Get user's time zone

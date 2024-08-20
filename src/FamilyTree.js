@@ -6,6 +6,8 @@ import Tree from 'react-d3-tree';
 const FamilyTree = ({ data }) => {
     const [selectedMember, setSelectedMember] = useState(null);
     const modalRef = useRef(null);
+    const REACT_APP_IMAGE_BASE_URL_PROD = "/d3-family-tree/images";
+    const REACT_APP_IMAGE_BASE_URL_DEV = "/images";
     
     const handleNodeClick = (nodeData) => {
         setSelectedMember(nodeData);
@@ -33,16 +35,14 @@ const FamilyTree = ({ data }) => {
     }, [selectedMember, handleClickOutside]);
 
     const getImagePath = (imageName) => {
+        const baseUrl = process.env.NODE_ENV === 'production' ? REACT_APP_IMAGE_BASE_URL_PROD : REACT_APP_IMAGE_BASE_URL_DEV;
         if (!imageName) {
-            return `/d3-family-tree/images/headshot-white.png`
+            return `${baseUrl}/headshot-white.png`
         }
-        
-//        const baseUrl = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_IMAGE_BASE_URL_PROD : process.env.REACT_APP_IMAGE_BASE_URL_DEV;
-        const baseUrl = process.env.NODE_ENV === 'production' ? "/d3-family-tree/images" : "/images";
         return `${baseUrl}/${imageName}`;
     };
     const renderRectSvgNode = ({ nodeDatum }) => {
-        const { birthday, birthplace, deathday, gender, hebrewBirthday, hebrewDeathday, hebrewName, image, name, persianBirthday, persianDeathday, spouse, weddingDate } = nodeDatum;
+        const { birthday, deathday, gender, hebrewBirthday, hebrewDeathday, hebrewName, image, name, spouse } = nodeDatum;
         const backgroundColor = gender === 'male' ? 'lightblue' : gender === 'female' ? 'lightpink' : 'white';
         const spouseBackgroundColor = (spouse && spouse.gender === 'male') ? 'lightblue' : (spouse && spouse.gender === 'female') ? 'lightpink' : 'white';
 
@@ -50,49 +50,45 @@ const FamilyTree = ({ data }) => {
             <g style={{ backgroundColor }} onClick={() => handleNodeClick(nodeDatum)}>
                 <rect width="240" height="160" x="-120" y="-80" fill={backgroundColor} stroke="#000000"/>
                 <image
-                    href={nodeDatum.image ? nodeDatum.image : `/d3-family-tree/images/headshot-white.png`}
+                    href={getImagePath(image)}
+                    alt={name}
                     x="-40"
                     y="-70"
                     width="80"
                     height="80"
                     onError={(e) => {
-                        console.error(`Error loading image: ${nodeDatum.image}`);
+                        console.error(`Error loading image: ${image} (${name})`);
                         e.target.style.display = 'none';
                     }}
                 />
-                <text fill="black" strokeWidth="1" x="0" y="25" textAnchor="middle" className="pName">{nodeDatum.name}</text>
-                {nodeDatum?.hebrewName && (
-                    <text fill="black" strokeWidth="1" x="0" y="42" textAnchor="middle" className="hName">{nodeDatum.hebrewName}</text>
-                )}
-                {nodeDatum.birthday && 
-                    <text fill="black" strokeWidth="1" x="0" y="55" textAnchor="middle" className="details">{nodeDatum.birthday}{nodeDatum.deathday && ` - ${nodeDatum.deathday}`}</text>
+                <text fill="black" strokeWidth="1" x="0" y="25" textAnchor="middle" className="pName">{name}</text>
+                {hebrewName && (<text fill="black" strokeWidth="1" x="0" y="42" textAnchor="middle" className="hName">{hebrewName}</text>)}
+                {birthday && <text fill="black" strokeWidth="1" x="0" y="55" textAnchor="middle" className="details">{birthday}{deathday && ` - ${deathday}`}</text>}
+                {hebrewBirthday && 
+                    <text fill="black" strokeWidth="1" x="0" y="70" textAnchor="middle" className="details">{hebrewBirthday}{hebrewDeathday && ` - ${hebrewDeathday}`}</text>
                 }
-                {nodeDatum.hebrewBirthday && 
-                    <text fill="black" strokeWidth="1" x="0" y="70" textAnchor="middle" className="details">{nodeDatum.hebrewBirthday}{nodeDatum.hebrewDeathday && ` - ${nodeDatum.hebrewDeathday}`}</text>
-                }
-                {nodeDatum.spouse && (
+                {spouse && (
                     <>
                         <rect width="240" height="160" x="140" y="-80" fill={spouseBackgroundColor} stroke="#000000" />
                         <image
-                            href={nodeDatum.spouse.image ? nodeDatum.spouse.image : `/d3-family-tree/images/headshot-white.png`}
+                            href={getImagePath(spouse.image)}
+                            alt={spouse.name}
                             x="225"
                             y="-70"
                             width="80"
                             height="80"
                             onError={(e) => {
-                                console.error(`Error loading image: ${nodeDatum.spouse.image}`);
+                                console.error(`Error loading image: (${spouse.name}) ${spouse.image}`);
                                 e.target.style.display = 'none';
                             }}
                         />
-                        <text fill="black" strokeWidth="1" x="260" y="25" textAnchor="middle" className="pName">{nodeDatum.spouse.name}</text>
-                        {nodeDatum.spouse.hebrewName && 
-                            <text fill="black" strokeWidth="1" x="260" y="42" textAnchor="middle" className="hName">{nodeDatum.spouse.hebrewName}</text>
+                        <text fill="black" strokeWidth="1" x="260" y="25" textAnchor="middle" className="pName">{spouse.name}</text>
+                        {spouse.hebrewName && <text fill="black" strokeWidth="1" x="260" y="42" textAnchor="middle" className="hName">{spouse.hebrewName}</text>}
+                        {spouse.birthday && 
+                            <text fill="grey" strokeWidth="1" x="260" y="55" textAnchor="middle" className="supData">{spouse.birthday}{spouse.deathday && ` - ${spouse.deathday}`}</text>
                         }
-                        {nodeDatum.spouse.birthday && 
-                            <text fill="grey" strokeWidth="1" x="260" y="55" textAnchor="middle" className="supData">{nodeDatum.spouse.birthday}{nodeDatum.spouse.deathday && ` - ${nodeDatum.spouse.deathday}`}</text>
-                        }
-                        {nodeDatum.spouse.hebrewBirthday &&
-                        <text fill="black" strokeWidth="1" x="260" y="70" textAnchor="middle" className="supData">{nodeDatum.spouse.hebrewBirthday}{nodeDatum.spouse.hebrewDeathday && ` - ${nodeDatum.spouse.hebrewDeathday}`}</text>
+                        {spouse.hebrewBirthday &&
+                            <text fill="black" strokeWidth="1" x="260" y="70" textAnchor="middle" className="supData">{spouse.hebrewBirthday}{spouse.hebrewDeathday && ` - ${spouse.hebrewDeathday}`}</text>
                         }
                     </>
                 )}
@@ -115,7 +111,7 @@ const FamilyTree = ({ data }) => {
                 <div className="modal">
                     <div className="modal-content" ref={modalRef}>
                         <div className="modal-member">
-                            <img src={selectedMember.image ? selectedMember.image : `/d3-family-tree/images/headshot-white.png`} alt={selectedMember.name}/>
+                            <img src={getImagePath(selectedMember.image)} alt={selectedMember.name}/>
                             <div className='modal-member-content'>
                                 <h2 className='member'>{selectedMember.name}</h2>
                                 {selectedMember?.hebrewName && (<p>{selectedMember.hebrewName}</p>)}
@@ -128,7 +124,7 @@ const FamilyTree = ({ data }) => {
                         {selectedMember.spouse && (
                             <div className="modal-spouse">
                                 <div className="modal-member">
-                                    <img src={selectedMember.spouse.image ? selectedMember.spouse.image : `/d3-family-tree/images/headshot-white.png`} alt={selectedMember.spouse.name}/>
+                                    <img src={getImagePath(selectedMember.spouse.image)} alt={selectedMember.spouse.name}/>
                                     <div className='modal-member-content'>
                                         <h3 className="spouse">{selectedMember.spouse.name}</h3>
                                         {selectedMember.spouse?.hebrewName && (<p>{selectedMember.spouse.hebrewName}</p>)}
