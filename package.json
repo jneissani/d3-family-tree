@@ -2,7 +2,7 @@
   "name": "neissani-family-tree",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jneissani.github.io/",
+  "homepage": "https://jneissani.github.io/d3-family-tree/",
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "7.21.0-placeholder-for-preset-env.2",
     "@testing-library/jest-dom": "^5.17.0",
