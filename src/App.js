@@ -1,23 +1,27 @@
-import React, { useMemo  } from 'react';
 //import React, { useMemo, useEffect, useState  } from 'react';
+import React, { useMemo } from 'react';
 import familyData from './familyData.json';
 import FamilyTree from './FamilyTree';
 import BirthdayBanner from './BirthdayBanner';
 import AnniversaryBanner from './AnniversaryBanner';
+import FamilyCrest from './familyCrest';
 
 function App() {
 /*
-  // Connect to the DB
-  const [familyData, setFamilyData] = useState([]);
+  const [familyData, setFamilyData] = useState([]); // Initialize state for family data
 
+  // Connect to the DB
   useEffect(() => {
       const fetchData = async () => {
           try {
-              const response = await fetch('http://localhost:5000/api/family');
+              const response = await fetch('http://localhost:5000/api/family'); // Fetch data from the backend API
+              if (!response.ok) {
+                  throw new Error('Network response was not ok');
+              }
               const data = await response.json();
-              setFamilyData(data);
+              setFamilyData(data); // Set the fetched data to state
           } catch (error) {
-              console.error('Error fetching family data:', error);
+              console.error('Error fetching family data:', error); 
           }
       };
 
@@ -97,17 +101,23 @@ function App() {
 
   const birthdaysFound = useMemo(() => hasBirthdays(familyData), [familyData, todayMonthDay]);
   const anniversariesFound = useMemo(() => hasAnniversaries(familyData), [familyData, todayMonthDay]);
-
-  const anniversaryBanner  = <AnniversaryBanner familyData={familyData} />;
-  const birthdayBanner = <BirthdayBanner familyData={familyData} />;
+/*
+  // Ensure familyData is defined before filtering
+  const birthdaysFound = familyData.filter(member => member && hasBirthdays(member)); // Filter family data for birthdays
+  const anniversariesFound = familyData.filter(member => member && hasAnniversaries(member)); // Filter family data for anniversaries
+*/
+  const birthdayBanner = <BirthdayBanner familyData={birthdaysFound} />;
+  const anniversaryBanner  = <AnniversaryBanner familyData={anniversariesFound} />;
 
   const anniversaryMargin = (birthdaysFound === true ? 55 : 0); // Calculate the anniversaries margin based on the presence of banners
   const topMargin = (birthdaysFound === true ? 55 : 0) + (anniversariesFound === true ? 55 : 0); // Calculate the top margin based on the presence of banners
+
 
   return (
     <div className="App" style={{ marginTop: `${topMargin}px` }}>
       {birthdaysFound && birthdayBanner}
       {anniversariesFound && <div className="anniversary-banner" style={{ position: `fixed`, top: `${anniversaryMargin}px` }}>{anniversaryBanner}</div>}
+      <FamilyCrest />
       <h1>Neissani Family Tree</h1>
       <FamilyTree data={familyData} />
     </div>

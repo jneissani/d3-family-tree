@@ -21,8 +21,8 @@ const familySchema = new mongoose.Schema({
     gender: String,
     birthplace: String,
     deathplace: String,
-    birthday: Date,
-    deathday: Date,
+    birthday: String,
+    deathday: String,
     hebrewBirthday: String,
     hebrewDeathday: String,
     persianBirthday: String,
@@ -30,12 +30,11 @@ const familySchema = new mongoose.Schema({
     image: String,
     spouse: Object,
     children: Array,
-    // Add other relevant fields
 });
 
 const FamilyMember = mongoose.model('FamilyMember', familySchema);
 
-// API Endpoint to get family data
+// API Endpoint to get all family data
 app.get('/api/family', async (req, res) => {
     try {
         const familyData = await FamilyMember.find();
