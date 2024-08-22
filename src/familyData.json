@@ -1,10 +1,12 @@
 {
+  "__id": "001",
   "name": "Chaim Eshagh Neysani",
   "hebrewName": "Chaim Istkhak ben Avraham v'",
   "gender": "male",
   "birthplace": "Kashan, Iran",
   "deathplace": "",
   "birthday": "1923-12-01",
+  "celebratedBirthday": "1923-12-01",
   "deathday": "",
   "hebrewBirthday": "5684 Kislev 23",
   "hebrewDeathday": "",
@@ -12,6 +14,7 @@
   "persianDeathday": "",
   "image": "",
   "spouse": {
+    "__id": "002",
     "name": "Poorandokht Roshanzamir",
     "hebrewName": "Sarah bat Yecheskel Chaim v'Moolook",
     "gender": "female",
@@ -20,6 +23,7 @@
     "birthplace": "Arak, Iran",
     "deathplace": "Great Neck, Nassau County, NY, United States",
     "birthday": "1924-09-24",
+    "celebratedBirthday": "1924-09-24",
     "deathday": "2023-10-26",
     "hebrewBirthday": "",
     "hebrewDeathday": "10 Cheshvan 5784",
@@ -29,12 +33,14 @@
   },
   "children": [
     {
+      "__id": "003",
       "name": "Abraham Neissani",
       "hebrewName": "Avraham Chaim",
       "gender": "male",
       "birthplace": "Tehran, Iran",
       "deathplace": "",
       "birthday": "",
+      "celebratedBirthday": "1952-08-01",
       "deathday": "",
       "hebrewBirthday": "5712 Av 2",
       "hebrewDeathday": "",
@@ -42,6 +48,7 @@
       "persianDeathday": "",
       "image": "",
       "spouse": {
+        "__id": "004",
         "name": "Roya Massachi",
         "hebrewName": "Rina bat Shlomo v'Mahin",
         "gender": "female",
@@ -50,15 +57,17 @@
         "birthplace": "Tehran, Iran",
         "deathplace": "",
         "birthday": "1959-07-14",
+        "celebratedBirthday": "1959-07-14",
         "deathday": "",
         "hebrewBirthday": "5719 Tamuz 8",
         "hebrewDeathday": "",
         "persianBirthday": "22 Tir 1338",
         "persianDeathday": "",
-        "image": ""
+        "image": "19590714-RoyaMasachi.jpg"
       },
       "children": [
         {
+          "__id": "005",
           "name": "Jonathan Isaac Neissani",
           "hebrewName": "Yonatan Itzkhak",
           "gender": "male",
@@ -72,6 +81,7 @@
           "persianDeathday": "",
           "image": "",
           "spouse": {
+            "__id": "006",
             "name": "Annette Gabay",
             "hebrewName": "Anat bat Emil v'Irene",
             "gender": "female",
@@ -89,6 +99,7 @@
           },
           "children": [
             {
+              "__id": "007",
               "name": "Noa Ora Neissani",
               "hebrewName": "Noa Ora",
               "gender": "female",
@@ -103,6 +114,7 @@
               "image": ""
             },
             {
+              "__id": "008",
               "name": "Maya Aviva Neissani",
               "hebrewName": "Maya Aviva",
               "gender": "female",
@@ -117,6 +129,7 @@
               "image": ""
             },
             {
+              "__id": "009",
               "name": "Jacob Solomon Neissani",
               "hebrewName": "Ya'akov Shlomo",
               "gender": "male",
@@ -133,6 +146,7 @@
           ]
         },
         {
+          "__id": "010",
           "name": "Jessica Nicole Neissani",
           "hebrewName": "Shira",
           "gender": "female",
@@ -146,6 +160,7 @@
           "persianDeathday": "",
           "image": "",
           "spouse": {
+            "__id": "011",
             "name": "Michael Aryeh Hauptman",
             "hebrewName": "Moshe Aryeh",
             "gender": "male",
@@ -163,6 +178,7 @@
           },
           "children": [
             {
+              "__id": "012",
               "name": "Isaac Ethan Hauptman",
               "hebrewName": "Yisrael Yitzkhak",
               "gender": "male",
@@ -177,6 +193,7 @@
               "image": ""
             },
             {
+              "__id": "013",
               "name": "Zachary (Zac) Hauptman",
               "hebrewName": "Shlomo Zakharia",
               "gender": "male",
@@ -191,6 +208,7 @@
               "image": ""
             },
             {
+              "__id": "014",
               "name": "Elizabeth (Ellie) Hauptman",
               "hebrewName": "Elisheva Chanah",
               "gender": "female",
@@ -207,6 +225,7 @@
           ]
         },
         {
+          "__id": "015",
           "name": "Justin David Neissani",
           "hebrewName": "Shlomo David",
           "gender": "male",
@@ -218,8 +237,9 @@
           "hebrewDeathday": "",
           "persianBirthday": "20 Khordad 1371",
           "persianDeathday": "",
-          "image": "1533562722208.jpg",
+          "image": "19920610-JustinNeissani.jpg",
           "spouse": {
+            "__id": "016",
             "name": "Rebecca Tehrani",
             "hebrewName": "",
             "gender": "female",
@@ -237,6 +257,7 @@
           },
           "children": [
             {
+              "__id": "017",
               "name": "Benjamin Omri Neissani",
               "hebrewName": "Binyamin Omri",
               "gender": "male",
@@ -255,12 +276,14 @@
       ]
     },
     {
+      "__id": "018",
       "name": "Mansour Neissani",
       "hebrewName": "Yecheskel Chaim",
       "gender": "male",
       "birthplace": "Teharn, Iran",
       "deathplace": "",
       "birthday": "07-04",
+      "celebratedBirthday": "07-04",
       "deathday": "",
       "hebrewBirthday": "",
       "hebrewDeathday": "",
@@ -268,6 +291,7 @@
       "persianDeathday": "",
       "image": "",
       "spouse": {
+        "__id": "019",
         "name": "Sepideh Sassooni",
         "hebrewName": "",
         "gender": "female",
@@ -276,6 +300,7 @@
         "birthplace": "Teharn, Iran",
         "deathplace": "",
         "birthday": "05-01",
+        "celebratedBirthday": "05-01",
         "deathday": "",
         "hebrewBirthday": "",
         "hebrewDeathday": "",
@@ -285,6 +310,7 @@
       },
       "children": [
         {
+          "__id": "020",
           "name": "Sharareh Neissani",
           "hebrewName": "",
           "gender": "female",
@@ -296,8 +322,9 @@
           "hebrewDeathday": "",
           "persianBirthday": "1 Farvardin 1367",
           "persianDeathday": "",
-          "image": "",
+          "image": "19880321-ShariNeissani.png",
           "spouse": {
+            "__id": "021",
             "name": "Misha Gurevich",
             "hebrewName": "",
             "gender": "male",
@@ -311,10 +338,11 @@
             "hebrewDeathday": "",
             "persianBirthday": "",
             "persianDeathday": "",
-            "image": ""
+            "image": "MishaGurevich.jpg"
           },
           "children": [
             {
+              "__id": "022",
               "name": "Elliot Gurevich",
               "hebrewName": "Chaim Yitzkhak",
               "gender": "male",
@@ -329,6 +357,7 @@
               "image": ""
             },
             {
+              "__id": "023",
               "name": "Mia Gurevich",
               "hebrewName": "Sarah",
               "gender": "female",
@@ -345,7 +374,8 @@
           ]
         },
         {
-          "name": "Desire Neissani",
+          "__id": "024",
+          "name": "Desiree Neissani",
           "hebrewName": "",
           "gender": "female",
           "birthplace": "Manhasset, NY, USA",
@@ -356,9 +386,10 @@
           "hebrewDeathday": "",
           "persianBirthday": "9 Mordad 1371",
           "persianDeathday": "",
-          "image": ""
+          "image": "19920731-DesireeNeissani.png"
         },
         {
+          "__id": "025",
           "name": "David Neissani",
           "hebrewName": "",
           "gender": "male",
@@ -370,17 +401,19 @@
           "hebrewDeathday": "",
           "persianBirthday": "19 Esfand 1373",
           "persianDeathday": "",
-          "image": ""
+          "image": "19950310-DavidNeissani.jpg"
         }
       ]
     },
     {
+      "__id": "026",
       "name": "Lida Neissani",
       "hebrewName": "",
       "gender": "female",
       "birthplace": "Teharn, Iran",
       "deathplace": "",
       "birthday": "02-02",
+      "celebratedBirthday": "02-02",
       "deathday": "",
       "hebrewBirthday": "",
       "hebrewDeathday": "",
@@ -388,6 +421,7 @@
       "persianDeathday": "",
       "image": "",
       "spouse": {
+        "__id": "027",
         "name": "Joseph Esrail",
         "hebrewName": "",
         "gender": "male",
@@ -396,6 +430,7 @@
         "birthplace": "Teharn, Iran",
         "deathplace": "",
         "birthday": "",
+        "celebratedBirthday": "",
         "deathday": "",
         "hebrewBirthday": "",
         "hebrewDeathday": "",
@@ -405,6 +440,7 @@
       },
       "children": [
         {
+          "__id": "028",
           "name": "Matthew Esrail",
           "hebrewName": "Mattityahu Shlomo",
           "gender": "male",
@@ -421,19 +457,22 @@
       ]
     },
     {
+      "__id": "029",
       "name": "Stella Neissani",
       "hebrewName": "",
       "gender": "female",
       "birthplace": "Teharn, Iran",
       "deathplace": "",
       "birthday": "02-22",
+      "celebratedBirthday": "02-22",
       "deathday": "",
       "hebrewBirthday": "",
       "hebrewDeathday": "",
       "persianBirthday": "",
       "persianDeathday": "",
-      "image": "",
+      "image": "StellaNeissani.avif",
       "spouse": {
+        "__id": "030",
         "name": "Rony Aghravi",
         "hebrewName": "",
         "gender": "male",
@@ -442,6 +481,7 @@
         "birthplace": "Tel-Aviv, Israel",
         "deathplace": "",
         "birthday": "05-02",
+        "celebratedBirthday": "05-02",
         "deathday": "",
         "hebrewBirthday": "",
         "hebrewDeathday": "",
@@ -451,6 +491,7 @@
       },
       "children": [
         {
+          "__id": "031",
           "name": "Alexander Benjamin Aghravi",
           "hebrewName": "Binyamin",
           "gender": "male",
@@ -462,9 +503,10 @@
           "hebrewDeathday": "",
           "persianBirthday": "21 Mordad 1373",
           "persianDeathday": "",
-          "image": ""
+          "image": "19940812-AlexAghravi.jpg"
         },
         {
+          "__id": "032",
           "name": "Ashley Rachel Aghravi",
           "hebrewName": "Rakhel",
           "gender": "female",
@@ -476,7 +518,7 @@
           "hebrewDeathday": "",
           "persianBirthday": "27 Mehr 1376",
           "persianDeathday": "",
-          "image": ""
+          "image": "19971019-AshleyAghravi.jpg"
         }
       ]
     }

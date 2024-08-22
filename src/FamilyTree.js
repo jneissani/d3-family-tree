@@ -29,7 +29,7 @@ const FamilyTree = ({ data }) => {
                 handleClickOutside(event);
             }
         };
-        
+
         if (selectedMember) {
             document.addEventListener('mousedown', handleMouseDown);
         } else {
@@ -117,6 +117,7 @@ const FamilyTree = ({ data }) => {
                                 <h2 className='member'>{selectedMember.name}</h2>
                                 {selectedMember.hebrewName && (<p>{selectedMember.hebrewName}</p>)}
                                 <p>{selectedMember.birthday}{selectedMember.deathday && (<> - {selectedMember.deathday}</>)}</p>
+                                {selectedMember.celebratedBirthday && (<p>Birthday celebrated {selectedMember.celebratedBirthday}</p>)}
                                 <p>{selectedMember.hebrewBirthday}{selectedMember.hebrewDeathday && (<> - {selectedMember.hebrewDeathday}</>)}</p>
                                 <p>{selectedMember.persianBirthday}{selectedMember.persianDeathday && (<> - {selectedMember.persianDeathday}</>)}</p>
                                 {selectedMember.birthplace && (<p>Born in {selectedMember.birthplace}</p>)}
@@ -132,6 +133,7 @@ const FamilyTree = ({ data }) => {
                                         {selectedMember.spouse.hebrewName && (<p>{selectedMember.spouse.hebrewName}</p>)}
                                         {selectedMember.spouse.weddingDate && (<p>Married: {selectedMember.spouse.weddingDate} ({selectedMember.spouse.weddingHebrewDate})</p>)}
                                         <p>{selectedMember.spouse.birthday}{selectedMember.spouse.deathday && (<> - {selectedMember.spouse.deathday}</>)}</p>
+                                        {selectedMember.spouse.celebratedBirthday && (<p>Birthday celebrated {selectedMember.spouse.celebratedBirthday}</p>)}
                                         <p>{selectedMember.spouse.hebrewBirthday}{selectedMember.spouse.hebrewDeathday && (<> - {selectedMember.spouse.hebrewDeathday}</>)}</p>
                                         <p>{selectedMember.spouse.persianBirthday}{selectedMember.spouse.persianDeathday && (<> - {selectedMember.spouse.persianDeathday}</>)}</p>
                                         {selectedMember.spouse.birthplace && (<p>Born in {selectedMember.spouse.birthplace}</p>)}
