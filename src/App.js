@@ -1,4 +1,3 @@
-//import React, { useMemo, useEffect, useState  } from 'react';
 import React, { useMemo } from 'react';
 import familyData from './familyData.json';
 import FamilyTree from './FamilyTree';
@@ -7,32 +6,12 @@ import AnniversaryBanner from './AnniversaryBanner';
 import FamilyCrest from './familyCrest';
 
 function App() {
-/*
-  const [familyData, setFamilyData] = useState([]); // Initialize state for family data
-
-  // Connect to the DB
-  useEffect(() => {
-      const fetchData = async () => {
-          try {
-              const response = await fetch('http://localhost:5000/api/family'); // Fetch data from the backend API
-              if (!response.ok) {
-                  throw new Error('Network response was not ok');
-              }
-              const data = await response.json();
-              setFamilyData(data); // Set the fetched data to state
-          } catch (error) {
-              console.error('Error fetching family data:', error); 
-          }
-      };
-
-      fetchData();
-  }, []);
-*/
-  // Function to check for anniversaries
+  // Get today's date details
   const today = new Date();
   const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone; // Get user's time zone
   const todayMonthDay = today.toLocaleString('en-CA', { timeZone: userTimeZone, month: '2-digit', day: '2-digit' }).replace(/\//g, '-'); // Format date as MM-DD
 
+  // Function to check for anniversaries
   const hasAnniversaries = (member) => {
     const isValidDate = (dateString) => {
         const regex = /^\d{4}-\d{2}-\d{2}$/; // YYYY-MM-DD format
@@ -101,15 +80,10 @@ function App() {
 
   const birthdaysFound = useMemo(() => hasBirthdays(familyData), [familyData, todayMonthDay]);
   const anniversariesFound = useMemo(() => hasAnniversaries(familyData), [familyData, todayMonthDay]);
-/*
-  // Ensure familyData is defined before filtering
-  const birthdaysFound = familyData.filter(member => member && hasBirthdays(member)); // Filter family data for birthdays
-  const anniversariesFound = familyData.filter(member => member && hasAnniversaries(member)); // Filter family data for anniversaries
-*/
   const birthdayBanner = <BirthdayBanner familyData={birthdaysFound} />;
   const anniversaryBanner  = <AnniversaryBanner familyData={anniversariesFound} />;
 
-  const anniversaryMargin = (birthdaysFound === true ? 55 : 0); // Calculate the anniversaries margin based on the presence of banners
+  const anniversaryMargin = (birthdaysFound === true ? 55 : 0); // Calculate the anniversaries margin based on the presence of the birthday banner
   const topMargin = (birthdaysFound === true ? 55 : 0) + (anniversariesFound === true ? 55 : 0); // Calculate the top margin based on the presence of banners
 
 

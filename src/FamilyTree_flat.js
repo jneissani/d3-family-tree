@@ -48,9 +48,16 @@ const FamilyTree = ({ data }) => {
         }
         return `${baseUrl}/${imageName}`;
     };
+
+    const getSpouseById = (spouseId) => {
+        return familyData.find(member => member.__id === spouseId); // Adjust according to your actual ID field
+    };
+    
     const renderRectSvgNode = ({ nodeDatum }) => {
-        const { birthday, deathday, gender, hebrewBirthday, hebrewDeathday, hebrewName, image, name, spouse } = nodeDatum;
+        const { birthday, deathday, gender, hebrewBirthday, hebrewDeathday, hebrewName, image, name, spouseId, children } = nodeDatum;
         const backgroundColor = gender === 'male' ? 'lightblue' : gender === 'female' ? 'lightpink' : 'white';
+
+        const spouse = getSpouseById(spouseId);
         const spouseBackgroundColor = (spouse && spouse.gender === 'male') ? 'lightblue' : (spouse && spouse.gender === 'female') ? 'lightpink' : 'white';
 
         return (
