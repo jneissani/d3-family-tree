@@ -22,9 +22,10 @@ function App() {
     if (member.spouse && member.spouse.weddingDate && isValidDate(member.spouse.weddingDate)) {
       try {
         const anniversaryDate = new Date(member.spouse.weddingDate);
-        const anniversaryMonthDay = `${String(anniversaryDate.getMonth() + 1).padStart(2, '0')}-${anniversaryDate.getDate()+1}`;
-        if ( anniversaryMonthDay === todayMonthDay) {
-            return true; // Return true if the anniversary matches today
+        const anniversaryMonthDay = `${String(anniversaryDate.getMonth() + 1).padStart(2, '0')}-${String(anniversaryDate.getDate()+1).padStart(2, '0')}`;
+        if ( anniversaryMonthDay === todayMonthDay ) {
+//          console.log(`${member.name}'s anniversary: ${anniversaryMonthDay}`);
+          return true; // Return true if the anniversary matches today
         }
       } catch (error) {
         console.error(`Error parsing anniversary date for ${member.spouse.name}: ${error}`);
@@ -52,9 +53,10 @@ function App() {
     if (member.birthday && isValidDate(member.birthday)) {
       try {
         const birthdayDate = new Date(member.birthday);
-        const birthdayMonthDay = `${String(birthdayDate.getMonth() + 1).padStart(2, '0')}-${birthdayDate.getDate()+1}`;
-        if (birthdayMonthDay === todayMonthDay) {
-            return true; // Return true if a member's birthday matches today
+        const birthdayMonthDay = `${String(birthdayDate.getMonth() + 1).padStart(2, '0')}-${String(birthdayDate.getDate()+1).padStart(2, '0')}`;
+        if ( birthdayMonthDay === todayMonthDay ) {
+//          console.log(`${member.name}'s birthday: ${birthdayMonthDay}`);
+          return true; // Return true if a member's birthday matches today
         }
       } catch (error) {
           console.error(`Error parsing birthday date for ${member.name}: ${error}`);
@@ -80,8 +82,8 @@ function App() {
 
   const birthdaysFound = useMemo(() => hasBirthdays(familyData), [familyData, todayMonthDay]);
   const anniversariesFound = useMemo(() => hasAnniversaries(familyData), [familyData, todayMonthDay]);
-  const birthdayBanner = <BirthdayBanner familyData={birthdaysFound} />;
-  const anniversaryBanner  = <AnniversaryBanner familyData={anniversariesFound} />;
+  const birthdayBanner = <BirthdayBanner familyData={familyData} />;
+  const anniversaryBanner  = <AnniversaryBanner familyData={familyData} />;
 
   const anniversaryMargin = (birthdaysFound === true ? 55 : 0); // Calculate the anniversaries margin based on the presence of the birthday banner
   const topMargin = (birthdaysFound === true ? 55 : 0) + (anniversariesFound === true ? 55 : 0); // Calculate the top margin based on the presence of banners

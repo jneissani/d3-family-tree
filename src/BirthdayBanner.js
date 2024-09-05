@@ -9,7 +9,8 @@ const BirthdayBanner = ({ familyData }) => {
     const isBirthdayToday = (birthday) => {
         try {
             const birthdayDate = new Date(birthday);
-            const birthdayMonthDay = `${String(birthdayDate.getMonth() + 1).padStart(2, '0')}-${birthdayDate.getDate()+1}`;
+            const birthdayMonthDay = `${String(birthdayDate.getMonth() + 1).padStart(2, '0')}-${String(birthdayDate.getDate()+1).padStart(2, '0')}`; // Format date as MM-DD
+
             return birthdayMonthDay === todayMonthDay;
         } catch (error) {
             console.error(`Error parsing birthday date: ${error}`);

@@ -8,7 +8,7 @@ const AnniversaryBanner = ({ familyData }) => {
     const isAnniversaryToday = (weddingDate) => {
         try {
             const anniversaryDate = new Date(weddingDate);
-            const anniversaryMonthDay = `${String(anniversaryDate.getMonth() + 1).padStart(2, '0')}-${anniversaryDate.getDate()+1}`;
+            const anniversaryMonthDay = `${String(anniversaryDate.getMonth() + 1).padStart(2, '0')}-${String(anniversaryDate.getDate()+1).padStart(2, '0')}`; // Format date as MM-DD
             return anniversaryMonthDay === todayMonthDay;
         } catch (error) {
             console.error(`Error parsing anniversary date: ${error}`);
