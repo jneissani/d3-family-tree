@@ -47,7 +47,7 @@ p {
   background-color: #ffcccb; /* Light red background */
   color: #000; /* Black text */
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   font-weight: bold;
   min-height: 50px;
   left: 0;
@@ -63,7 +63,7 @@ p {
   background-color: #ffeb3b; /* Yellow background */
   color: #000; /* Black text */
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   font-weight: bold;
   min-height: 50px;
   position: fixed; /* Fixed position at the top */
@@ -157,6 +157,14 @@ p {
 
 /* Responsive Styles */
 @media (max-width: 600px) {
+  .anniversary-banner {
+    font-size: 1rem;
+  }
+
+  .birthday-banner {
+    font-size: 1rem;
+  }
+
   .modal-content {
     padding: 10px; /* Reduce padding for smaller screens */
   }

@@ -83,11 +83,12 @@ XX    Error Handling:
 XX    Performance Optimization:
         Use memoization techniques with useMemo or useCallback for functions that are called frequently, such as checkAnniversary, to avoid unnecessary recalculations.
     Move Details to Database
-    Create bi-directional (parent-child) relationships using member's IDs
+    Flatten data and create bi-directional (parent-child) relationships using member's IDs
     Responsive Design:
         Ensure that the family tree layout is responsive and adapts well to different screen sizes. This can be achieved by using CSS media queries or a responsive design library.
     Multiple Trees/Views:
         Add a button to make someone the main branch of the tree. Show spouse(s), children, siblings, parents, grandparents, great-grandparents, etc
+    Make banner names "clickable" to open relevant modal
 
 Features to Add
    Search Functionality:
