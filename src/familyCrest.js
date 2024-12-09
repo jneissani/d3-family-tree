@@ -2,7 +2,10 @@ import React from 'react';
 
 const FamilyCrest = () => {
     const crestImage = "family_crest.png";
-    const baseUrl = process.env.NODE_ENV === 'production' ? "/d3-family-tree/images" : "/images";
+    const REACT_APP_IMAGE_BASE_URL_PROD = "/d3-family-tree/images";
+    const REACT_APP_IMAGE_BASE_URL_DEV = "/d3-family-tree/images";
+
+    const baseUrl = process.env.NODE_ENV === 'production' ? REACT_APP_IMAGE_BASE_URL_PROD : REACT_APP_IMAGE_BASE_URL_DEV;
 
     return (
         <div style={{ height: '100px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>

@@ -6,6 +6,7 @@ import AnniversaryBanner from './AnniversaryBanner';
 import FamilyCrest from './familyCrest';
 
 function App() {
+
   // Get today's date details
   const today = new Date();
   const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone; // Get user's time zone
@@ -24,7 +25,6 @@ function App() {
         const anniversaryDate = new Date(member.spouse.weddingDate);
         const anniversaryMonthDay = `${String(anniversaryDate.getMonth() + 1).padStart(2, '0')}-${String(anniversaryDate.getDate()+1).padStart(2, '0')}`;
         if ( anniversaryMonthDay === todayMonthDay ) {
-//          console.log(`${member.name}'s anniversary: ${anniversaryMonthDay}`);
           return true; // Return true if the anniversary matches today
         }
       } catch (error) {
@@ -55,7 +55,6 @@ function App() {
         const birthdayDate = new Date(member.birthday);
         const birthdayMonthDay = `${String(birthdayDate.getMonth() + 1).padStart(2, '0')}-${String(birthdayDate.getDate()+1).padStart(2, '0')}`;
         if ( birthdayMonthDay === todayMonthDay ) {
-//          console.log(`${member.name}'s birthday: ${birthdayMonthDay}`);
           return true; // Return true if a member's birthday matches today
         }
       } catch (error) {

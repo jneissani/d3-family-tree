@@ -73,6 +73,10 @@ p {
   z-index: 1000; /* Ensure it appears above other content */
 }
 
+.female {
+  background-color: #ffb6c1;
+}
+
 .headerCrest {
   display: inline-block;
   height: 100px;
@@ -84,9 +88,6 @@ p {
 
 .male {
   background-color: #add8e6;
-}
-.female {
-  background-color: #ffb6c1;
 }
 
 .modal {

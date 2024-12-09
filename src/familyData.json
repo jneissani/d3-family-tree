@@ -29,7 +29,7 @@
     "hebrewDeathday": "10 Cheshvan 5784",
     "persianBirthday": "",
     "persianDeathday": "",
-    "image": ""
+    "image": "19240924PoorandokhtRoshanzamir.jpeg"
   },
   "children": [
     {
@@ -47,6 +47,7 @@
       "persianBirthday": "2 Mordad 1331",
       "persianDeathday": "",
       "image": "",
+      "parentIds": ["001", "002"],
       "spouse": {
         "__id": "004",
         "name": "Roya Massachi",
@@ -247,7 +248,7 @@
             "weddingHebrewDate": "5784 Cheshvan 25",
             "birthplace": "",
             "deathplace": "",
-            "birthday": "",
+            "birthday": "12-09",
             "deathday": "",
             "hebrewBirthday": "",
             "hebrewDeathday": "",
@@ -290,10 +291,11 @@
       "persianBirthday": "",
       "persianDeathday": "",
       "image": "",
+      "parentIds": ["001", "002"],
       "spouse": {
         "__id": "019",
         "name": "Sepideh Sassooni",
-        "hebrewName": "",
+        "hebrewName": "Leah bat ",
         "gender": "female",
         "weddingDate": "1988",
         "weddingHebrewDate": "",
@@ -408,7 +410,7 @@
     {
       "__id": "026",
       "name": "Lida Neissani",
-      "hebrewName": "",
+      "hebrewName": "Leah",
       "gender": "female",
       "birthplace": "Teharn, Iran",
       "deathplace": "",
@@ -420,17 +422,18 @@
       "persianBirthday": "",
       "persianDeathday": "",
       "image": "",
+      "parentIds": ["001", "002"],
       "spouse": {
         "__id": "027",
         "name": "Joseph Esrail",
-        "hebrewName": "",
+        "hebrewName": "Yosef ben Shlomo v'Louis",
         "gender": "male",
         "weddingDate": "1994-01-25",
         "weddingHebrewDate": "5754 Sh'vat 13",
         "birthplace": "Teharn, Iran",
         "deathplace": "",
-        "birthday": "",
-        "celebratedBirthday": "",
+        "birthday": "09-17",
+        "celebratedBirthday": "09-17",
         "deathday": "",
         "hebrewBirthday": "",
         "hebrewDeathday": "",
@@ -459,7 +462,7 @@
     {
       "__id": "029",
       "name": "Stella Neissani",
-      "hebrewName": "",
+      "hebrewName": "Esther ",
       "gender": "female",
       "birthplace": "Teharn, Iran",
       "deathplace": "",
@@ -471,10 +474,11 @@
       "persianBirthday": "",
       "persianDeathday": "",
       "image": "StellaNeissani.avif",
+      "parentIds": ["001", "002"],
       "spouse": {
         "__id": "030",
         "name": "Rony Aghravi",
-        "hebrewName": "",
+        "hebrewName": "Moshe ben ",
         "gender": "male",
         "weddingDate": "1993-09-05",
         "weddingHebrewDate": "5753 Elul 16",

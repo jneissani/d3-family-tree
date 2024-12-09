@@ -7,12 +7,11 @@ const FamilyTree = ({ data }) => {
     const [selectedMember, setSelectedMember] = useState(null);
     const modalRef = useRef(null);
     const REACT_APP_IMAGE_BASE_URL_PROD = "/d3-family-tree/images";
-    const REACT_APP_IMAGE_BASE_URL_DEV = "/images";
+    const REACT_APP_IMAGE_BASE_URL_DEV = "/d3-family-tree/images";
 
     const handleNodeClick = (nodeData) => {
         setSelectedMember(nodeData);
     };
-
     const closeModal = useCallback(() => {
         setSelectedMember(null);
     }, []);
